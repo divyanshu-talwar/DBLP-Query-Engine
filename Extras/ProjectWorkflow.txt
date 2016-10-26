@@ -1,0 +1,36 @@
+
+1. File I/O
+   1. In (includes formatting part necessary to process XML File and then stores the read contents to a collection). - Parse all data to be stored in a Java variable(s).
+      2. 1. Data Process and retrieve
+         1. display()
+            2. resultCount()
+               3. entityResolution() - will involve String manipulation
+                  4. Exceptions
+                     5. Show results 20 a time (could shift this to GUI)
+                        6. sortResults(date/relevance, timeFilter: between Yr X and Y / since Yr X)
+                           7. Search() - filters: Author, title tag
+                           1. GUI
+                              1. leftPanel
+                                    1. combobox for selecting the query
+                                          2. Initially, this area should be empty. And changes as Q1/Q2/Q3 are selected.
+                                                3. Has search and reset buttons
+                                                      4. Reset resets the frame
+                                                            5. Search can have a Thread which disables buttons and puts the system to sleep so that search engine does it’s job without it getting disturbed?(no need for sleep can implement it using button.setDisabled)
+                                                                  6. Input boxes wherever reqd.
+                                                                     1. Heading Bar 
+                                                                        2. Result Field
+                                                                              1. Prev 
+                                                                                    2. Next
+                                                                                    1. Specifications:
+                                                                                       1.  If no results are returned, display the message in the result box.
+                                                                                          2. Appropriate checks for values in the text boxes
+                                                                                             3. Show results 20 a time (could shift this to GUI)
+                                                                                                4. Results are always sorted by date.(Latest ones first)
+                                                                                                   5.  Results for Query1(given author name / title) should be in the following format:
+                                                                                                   <s_no>, <authors>, <title>, <pages>, <year>, <volume>, <journal/ book-title>,<url>
+                                                                                                      6. Results for Query2(given k ) should be just author names(who have written more than ‘k’ papers ) in a single column on a new line in the result box.
+                                                                                                         7. Query 3:(given year till where we need to use the data and 5 random authors predict no. of publications in the next year(  ±20% of the actual number of papers for at-least ⅗ , you get the bonus marks )
+                                                                                                            8. doxygen comments
+                                                                                                               9. design pattern 
+                                                                                                                  10. classes in your system are less than 200 lines
+                                                                                                                     11.  function in your​ ​system is less than 50 lines.
