@@ -22,7 +22,7 @@
 (Predict Papers)>(Prepare Training Data)
 (Predict Papers)>(Predict on Testing Data)
 (Fetch Input)>(GUI)
-(Reset)>(GUI)
+(Reset)<(GUI)
 [Query Engine]-(Parse XML)
 [Query Engine]-(Prepare Prediction Data)
 (Prepare Prediction Data)-(Predict Papers)
