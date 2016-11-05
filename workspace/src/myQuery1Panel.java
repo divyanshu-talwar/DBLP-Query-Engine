@@ -3,9 +3,6 @@ import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
-/**
- * Created by skwow on 10/23/2016.
- */
 public class myQuery1Panel
 {
     protected JPanel panel2=new JPanel(new GridBagLayout());
