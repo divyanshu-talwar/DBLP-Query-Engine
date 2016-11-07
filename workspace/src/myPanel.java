@@ -81,7 +81,7 @@ public class myPanel
             @Override
             public void actionPerformed(ActionEvent e) {
                 q1p.toTextField.setText("");
-                q1p.sinceYearTeaxtField.setText("");
+                q1p.sinceYearTextField.setText("");
                 q1p.nameTitleTextField.setText("");
                 q1p.fromTextField.setText("");
             }
@@ -98,7 +98,7 @@ public class myPanel
                 int from,to;
                 if(yearSelect.charAt(0)=='S')
                 {
-                    from= Integer.parseInt(q1p.sinceYearTeaxtField.getText());
+                    from= Integer.parseInt(q1p.sinceYearTextField.getText());
                     to=9999;  }  else  {
                     from= Integer.parseInt(q1p.fromTextField.getText());
                     to=Integer.parseInt(q1p.toTextField.getText());

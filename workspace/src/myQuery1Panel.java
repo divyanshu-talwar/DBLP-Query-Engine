@@ -88,7 +88,7 @@ public class myQuery1Panel
         yearSelect.addElement("Custom Range");
         yearCombo = new JComboBox(yearSelect);
         yearCombo.setSelectedIndex(0);
-        yearCombo.setPreferredSize(new Dimension(100,25));
+        yearCombo.setPreferredSize(new Dimension(300,25));
         yearCombo.setFont(new Font("Serif", Font.BOLD, 12));
         yearCombo.setBackground(Color.cyan);
         panel2gbc.fill= GridBagConstraints.HORIZONTAL;
