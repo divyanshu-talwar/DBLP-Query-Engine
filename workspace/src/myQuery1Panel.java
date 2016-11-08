@@ -38,11 +38,11 @@ public class myQuery1Panel
     {
         resetButton=new JButton("Reset");
         resetButton.setBackground(Color.gray);
-        resetButton.setFont(new Font("Serif", Font.BOLD, 12));
+        resetButton.setFont(new Font("Arial", Font.BOLD, 12));
         resetButton.setPreferredSize(new Dimension(100,25));
         searchButton=new JButton("Search");
         searchButton.setBackground(Color.gray);
-        searchButton.setFont(new Font("Serif", Font.BOLD, 12));
+        searchButton.setFont(new Font("Arial", Font.BOLD, 12));
         searchButton.setPreferredSize(new Dimension(100,25));
         panel2gbc.gridx=0;
         panel2gbc.gridy=8;
@@ -63,12 +63,12 @@ public class myQuery1Panel
         chkSortByYear = new Checkbox("Sort By Year",sort,false);
         chkSortByYear.setForeground(Color.cyan);
         chkSortByYear.setBackground(Color.gray);
-        chkSortByYear.setFont(new Font("Serif", Font.BOLD, 12));
+        chkSortByYear.setFont(new Font("Arial", Font.BOLD, 12));
         chkSortByYear.setPreferredSize(new Dimension(150,25));
         chkSortByRelevance = new Checkbox("Sort By Relevence",sort,false);
         chkSortByRelevance.setForeground(Color.cyan);
         chkSortByRelevance.setBackground(Color.gray);
-        chkSortByRelevance.setFont(new Font("Serif", Font.BOLD, 12));
+        chkSortByRelevance.setFont(new Font("Arial", Font.BOLD, 12));
         chkSortByRelevance.setPreferredSize(new Dimension(150,25));
         panel2gbc.gridwidth=2;
         panel2gbc.gridx=0;
@@ -89,7 +89,7 @@ public class myQuery1Panel
         yearCombo = new JComboBox(yearSelect);
         yearCombo.setSelectedIndex(0);
         yearCombo.setPreferredSize(new Dimension(300,25));
-        yearCombo.setFont(new Font("Serif", Font.BOLD, 12));
+        yearCombo.setFont(new Font("Arial", Font.BOLD, 12));
         yearCombo.setBackground(Color.cyan);
         panel2gbc.fill= GridBagConstraints.HORIZONTAL;
         panel2gbc.gridx=0;
@@ -136,8 +136,8 @@ public class myQuery1Panel
         sinceYearTextField=new JTextField("");
         sinceYearTextField.setPreferredSize(new Dimension(100,25));
         sinceYear.setPreferredSize(new Dimension(100,25));
-        sinceYear.setFont(new Font("Serif", Font.BOLD, 12));
-        sinceYearTextField.setFont(new Font("Serif", Font.BOLD, 12));
+        sinceYear.setFont(new Font("Arial", Font.BOLD, 12));
+        sinceYearTextField.setFont(new Font("Arial", Font.BOLD, 12));
         sinceYear.setForeground(Color.cyan);
         panel2gbc.gridx=0;
         panel2gbc.gridy=3;
@@ -153,8 +153,8 @@ public class myQuery1Panel
         fromTextField.setPreferredSize(new Dimension(100,25));
         from.setPreferredSize(new Dimension(100,25));
         from.setForeground(Color.gray);
-        from.setFont(new Font("Serif", Font.BOLD, 12));
-        fromTextField.setFont(new Font("Serif", Font.BOLD, 12));
+        from.setFont(new Font("Arial", Font.BOLD, 12));
+        fromTextField.setFont(new Font("Arial", Font.BOLD, 12));
         panel2gbc.gridx=0;
         panel2gbc.gridy=3;
         panel2.add(from,panel2gbc);
@@ -168,8 +168,8 @@ public class myQuery1Panel
         toTextField.setPreferredSize(new Dimension(100,25));
         to.setPreferredSize(new Dimension(100,25));
         to.setForeground(Color.cyan);
-        to.setFont(new Font("Serif", Font.BOLD, 12));
-        toTextField.setFont(new Font("Serif", Font.BOLD, 12));
+        to.setFont(new Font("Arial", Font.BOLD, 12));
+        toTextField.setFont(new Font("Arial", Font.BOLD, 12));
         panel2gbc.gridx=2;
         //panel2gbc.gridy=3;
         panel2.add(to,panel2gbc);
@@ -189,7 +189,7 @@ public class myQuery1Panel
         searchByCombo = new JComboBox(searchBy);
         searchByCombo.setSelectedIndex(0);
         searchByCombo.setPreferredSize(new Dimension(100,25));
-        searchByCombo.setFont(new Font("Serif", Font.BOLD, 12));
+        searchByCombo.setFont(new Font("Arial", Font.BOLD, 12));
         searchByCombo.setBackground(Color.cyan);
         panel2gbc.gridx=0;
         panel2gbc.gridy=0;
@@ -199,8 +199,8 @@ public class myQuery1Panel
         nameTitleTextField=new JTextField("");
         nameTitleTextField.setPreferredSize(new Dimension(100,25));
         nameTitleLabel.setPreferredSize(new Dimension(100,25));
-        nameTitleLabel.setFont(new Font("Serif", Font.BOLD, 12));
-        nameTitleTextField.setFont(new Font("Serif", Font.BOLD, 12));
+        nameTitleLabel.setFont(new Font("Arial", Font.BOLD, 12));
+        nameTitleTextField.setFont(new Font("Arial", Font.BOLD, 12));
         nameTitleLabel.setForeground(Color.cyan);
         // panel2gbc.gridx=0;
         panel2gbc.gridy=1;

@@ -21,7 +21,7 @@ public class myFrame extends JFrame
         framegbc.fill= GridBagConstraints.HORIZONTAL;
         framegbc.gridwidth = GridBagConstraints.REMAINDER;
         heading=new JLabel("DBLP Query Engine", SwingConstants.CENTER);
-        heading.setFont(new Font("Serif", Font.BOLD, 30));
+        heading.setFont(new Font("Arial", Font.BOLD, 30));
 //        heading.setBackground(Color.black);
         heading.setForeground(Color.cyan);
         framegbc.gridx=0;
