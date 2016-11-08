@@ -14,7 +14,7 @@
 		* add no. of results
 		* Display if entered data is invalid
 		* add checks for data entered in text fields
-		*
+		* Fix progress bar (should exit after things are fully loaded)
 
 	*Parser
 		* Not able to detect multiple authors(not more than 1 author added to list)
