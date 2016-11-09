@@ -19,11 +19,14 @@ public class Query1Handler  {
     {
         for(int i=0;i<Database.allData.size();i++)
         {
-            if(Database.allData.get(i).getAuthor().equals(name_title)&& Database.allData.get(i).getYear()>=from && Database.allData.get(i).getYear()<=to)
+//            System.out.println("sup");
+        	Data tmpData = Database.allData.get(i);
+        	if(tmpData.searchAuthor(name_title)&& tmpData.getYear()>=from && tmpData.getYear()<=to)
             {
                 list.add(Database.allData.get(i));
             }
         }
+        
         sort();
         print();
         showResult();

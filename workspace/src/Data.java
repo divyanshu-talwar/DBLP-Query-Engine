@@ -48,7 +48,16 @@ public class Data implements Comparable {
     public void addUrl(String _url) {
         url.add(_url);
     }
-
+    
+    public boolean searchAuthor(String name){
+    	System.out.println("Size is "+authors.size());
+    	for(int i=0;i<authors.size();i++){
+    		if(authors.get(i).toLowerCase().equals(name.toLowerCase()))
+    			return true;
+    	}
+    	return false;
+    }
+    
     public String getAuthor()
     {
         String temp=authors.get(0);
