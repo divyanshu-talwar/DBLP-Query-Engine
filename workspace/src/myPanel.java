@@ -24,7 +24,7 @@ public class myPanel
     public myPanel()
     {
         panel.setOpaque(false);
-        gbc.insets= new Insets(20,20,20,20);
+//        gbc.insets= new Insets(20,20,20,20);
         q1p=new myQuery1Panel();
         panel2= q1p.panel2;
         myQuery2Panel p3=new myQuery2Panel();
@@ -34,9 +34,9 @@ public class myPanel
         typeOfQuery.addElement("Query1");
         typeOfQuery.addElement("Query2");
         queryCombo = new JComboBox(typeOfQuery);
-        queryCombo.setFont(new Font("Serif", Font.BOLD, 30));
+        queryCombo.setFont(new Font("Serif", Font.BOLD, 12));
         queryCombo.setSelectedIndex(0);
-        queryCombo.setPreferredSize(new Dimension(200,50));
+        queryCombo.setPreferredSize(new Dimension(100,25));
         queryCombo.setBackground(Color.cyan);
         gbc.gridx=0;
         gbc.gridy=0;
@@ -68,7 +68,7 @@ public class myPanel
 
         gbc.gridx=0;
         gbc.gridy=1;
-        gbc.weighty=4;
+//        gbc.weighty=4;
         panel.add(panel2,gbc);
         panel.add(panel3,gbc);
         panel2.setVisible(false);
