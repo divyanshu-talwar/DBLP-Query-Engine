@@ -9,7 +9,7 @@ public class myQuery1Panel
     private GridBagConstraints panel2gbc= new GridBagConstraints();
     private JLabel sinceYear,from,to;
     protected JButton resetButton,searchButton;
-    protected JTextField sinceYearTeaxtField,fromTextField,toTextField,nameTitleTextField;
+    protected JTextField sinceYearTextField,fromTextField,toTextField,nameTitleTextField;
     protected JComboBox yearCombo,searchByCombo;
     protected Checkbox chkSortByYear,chkSortByRelevance;
     protected CheckboxGroup sort;
@@ -103,7 +103,7 @@ public class myQuery1Panel
                 if(temp.equals(1))
                 {
                     sinceYear.setVisible(true);
-                    sinceYearTeaxtField.setVisible(true);
+                    sinceYearTextField.setVisible(true);
                     from.setVisible(false);
                     fromTextField.setVisible(false);
                     to.setVisible(false);
@@ -112,7 +112,7 @@ public class myQuery1Panel
                 else if(temp.equals(0))
                 {
                     sinceYear.setVisible(false);
-                    sinceYearTeaxtField.setVisible(false);
+                    sinceYearTextField.setVisible(false);
                     from.setVisible(false);
                     fromTextField.setVisible(false);
                     to.setVisible(false);
@@ -121,7 +121,7 @@ public class myQuery1Panel
                 else if(temp.equals(2))
                 {
                     sinceYear.setVisible(false);
-                    sinceYearTeaxtField.setVisible(false);
+                    sinceYearTextField.setVisible(false);
                     from.setVisible(true);
                     fromTextField.setVisible(true);
                     to.setVisible(true);
@@ -133,20 +133,20 @@ public class myQuery1Panel
     private void YearSearchUI()
     {
         sinceYear= new JLabel("From");
-        sinceYearTeaxtField=new JTextField("");
-        sinceYearTeaxtField.setPreferredSize(new Dimension(100,25));
+        sinceYearTextField=new JTextField("");
+        sinceYearTextField.setPreferredSize(new Dimension(100,25));
         sinceYear.setPreferredSize(new Dimension(100,25));
         sinceYear.setFont(new Font("Serif", Font.BOLD, 12));
-        sinceYearTeaxtField.setFont(new Font("Serif", Font.BOLD, 12));
+        sinceYearTextField.setFont(new Font("Serif", Font.BOLD, 12));
         sinceYear.setForeground(Color.cyan);
         panel2gbc.gridx=0;
         panel2gbc.gridy=3;
         panel2.add(sinceYear,panel2gbc);
         panel2gbc.gridx=1;
         panel2gbc.gridy=3;
-        panel2.add(sinceYearTeaxtField,panel2gbc);
+        panel2.add(sinceYearTextField,panel2gbc);
         sinceYear.setVisible(false);
-        sinceYearTeaxtField.setVisible(false);
+        sinceYearTextField.setVisible(false);
 
         from= new JLabel("From");
         fromTextField=new JTextField("");
