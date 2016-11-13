@@ -14,7 +14,7 @@ public class Query1Handler  {
         to=_to;
         name_title=_name_title;
     }
-    // sort==1 for year and ===2 for relevance
+    // sort==1 for year and sort==2 for relevance
     public void doWork()
     {
         for(int i=0;i<Database.allData.size();i++)

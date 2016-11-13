@@ -3,9 +3,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Created by skwow on 10/27/2016.
- */
 public class myQuery3Panel
 {
     private JButton resetButton,searchButton;
