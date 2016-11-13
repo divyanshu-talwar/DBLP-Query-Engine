@@ -1,10 +1,10 @@
 [DBLP QEngine|-Data:Map|+get():Map;+set(String)],
-[DBLP QEngine]^-[File OP|FileNotFoundException:Exception|+XMLParse()]
-[DBLP QEngine]^-[Operations|+NotFoundException:Exception|+query1();+query2();+query3;+search();+sort();+predict();+entityResolution;+display();+resultCount()]
-[DBLP QEngine]^-[GUI|+Frame:JFrame]
+[DBLP QEngine]^-[File OP|~FileNotFoundException:Exception|+XMLParse()]
+[DBLP QEngine]^-[Operations|~NotFoundException:Exception|+query1();+query2();+query3;+search();+sort();+predict();+entityResolution;+display();+resultCount()]
+[DBLP QEngine]^-[GUI|+Frame:JFrame|]
 [File OP]<>-[Exceptions]
 [Operations]<>-1..*[Exceptions]
-[GUI]++[LeftPanel|-Q1:Query1;-Q2:Query2;-Q3:Query3;init:Initial;Src:Search and Reset|+actionPerformed(actionElement)]
+[GUI]++[LeftPanel|-Q1:Query1;-Q2:Query2;-Q3:Query3;-init:Initial;-Src:Search and Reset|+actionPerformed(actionElement)]
 [GUI]++[Title]
 [GUI]++[ResultBox|-prev:Previous;-next:Next;-rCount:ResultCountDisplay|+actionPerformed(actionElement)]
 [LeftPanel]++[Initial]
@@ -15,3 +15,5 @@
 [ResultBox]++[ResultCountDisplay]
 [ResultBox]++[Previous]
 [ResultBox]++[Next]
+(Fetch Input)-(Database)
+(Database)-(Parse XML)
