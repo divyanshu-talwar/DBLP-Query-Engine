@@ -38,7 +38,7 @@ public class Parser extends DefaultHandler{
         System.setProperty("jdk.xml.entityExpansionLimit", "0");
         pb= new ProgressBar();
         try {
-            File inputFile = new File("test.xml");
+            File inputFile = new File("dblp.xml");
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
             saxParser.parse(inputFile, this);
@@ -110,13 +110,12 @@ public class Parser extends DefaultHandler{
             String temp=new String(ch, start, length);
             overall = true;
             data=new Data();
-            data.addAuthor(temp);
+            data.addAuthor(new String(ch, start, length));
             authorbool = false;
         } 
-        else if (authorbool && overall) {
-        	String temp=new String(ch, start, length);
-            data.addAuthor(temp);
-            System.out.println("new author: " + temp);
+        else if (authorbool&& overall) {
+            data.addAuthor(new String(ch, start, length));
+            System.out.println("new author: " + new String(ch, start, length));
         }
         else if (titlebool&& overall) {
             titlebool = false;
