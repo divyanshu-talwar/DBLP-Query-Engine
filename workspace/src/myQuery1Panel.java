@@ -82,7 +82,7 @@ public class myQuery1Panel
 
     private void prepareYearSearchComboBox()
     {
-        final DefaultComboBoxModel yearSelect = new DefaultComboBoxModel();
+        final DefaultComboBoxModel<String> yearSelect = new DefaultComboBoxModel();
         yearSelect.addElement("Year Select");
         yearSelect.addElement("Since Year");
         yearSelect.addElement("Custom Range");
@@ -182,7 +182,7 @@ public class myQuery1Panel
 
     private void prepareSearchByComboBox()
     {
-        final DefaultComboBoxModel searchBy = new DefaultComboBoxModel();
+        final DefaultComboBoxModel<String> searchBy = new DefaultComboBoxModel();
         searchBy.addElement("Search By");
         searchBy.addElement("Name");
         searchBy.addElement("Title");
