@@ -34,7 +34,7 @@ public class myPanel
         typeOfQuery.addElement("Query1");
         typeOfQuery.addElement("Query2");
         queryCombo = new JComboBox(typeOfQuery);
-        queryCombo.setFont(new Font("Serif", Font.BOLD, 12));
+        queryCombo.setFont(new Font("Arial", Font.BOLD, 12));
         queryCombo.setSelectedIndex(0);
         queryCombo.setPreferredSize(new Dimension(100,25));
         queryCombo.setBackground(Color.cyan);
