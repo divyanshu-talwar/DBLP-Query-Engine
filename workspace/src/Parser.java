@@ -49,9 +49,7 @@ public class Parser extends DefaultHandler{
 
 
     @Override
-    public void startElement(String uri,
-                             String localName, String qName, Attributes attributes)
-            throws SAXException {
+    public void startElement(String uri,String localName, String qName, Attributes attributes)throws SAXException {
         if (qName.equalsIgnoreCase("article")) {
             articlebool = true;
         }else if (qName.equalsIgnoreCase("number")||qName.equalsIgnoreCase("ee")||qName.equalsIgnoreCase("crossref")||qName.equalsIgnoreCase("isbn")||qName.equalsIgnoreCase("publisher")||qName.equalsIgnoreCase("series")) {
@@ -116,35 +114,35 @@ public class Parser extends DefaultHandler{
             authorbool = false;
         } else if (authorbool&& overall) {
             data.addAuthor(new String(ch, start, length));
-             System.out.println("Title: " + new String(ch, start, length));
+            System.out.println("new author: " + new String(ch, start, length));
         }else if (titlebool&& overall) {
             titlebool = false;
             data.setTitle(new String(ch, start, length));
-             System.out.println("Title: " + new String(ch, start, length));
+//             System.out.println("Title: " + new String(ch, start, length));
         }else if (pagebool&& overall) {
             pagebool = false;
             data.setPages(new String(ch, start, length));
-            System.out.println("pages: " + new String(ch, start, length));
+//            System.out.println("pages: " + new String(ch, start, length));
         } else if (yearbool&& overall) {
             yearbool = false;
             try{
                 data.setYear(Integer.parseInt(new String(ch, start, length)));
-                 System.out.println("Year: " + Integer.parseInt(new String(ch, start, length)));
+//                 System.out.println("Year: " + Integer.parseInt(new String(ch, start, length)));
             }catch (Exception e){};
 
 
         }else if (volumebool&& overall) {
             volumebool = false;
             data.setVolume(new String(ch, start, length));
-            System.out.println("volume: " + new String(ch, start, length));
+//            System.out.println("volume: " + new String(ch, start, length));
         }else if (journalbool&& overall) {
             journalbool = false;
             data.setJournal_booktitle(new String(ch, start, length));
-            System.out.println("journal: " + new String(ch, start, length));
+//            System.out.println("journal: " + new String(ch, start, length));
         } else if (urlbool&& overall) {
             urlbool = false;
             data.addUrl(new String(ch, start, length));
-            System.out.println("Url: " + new String(ch, start, length));
+//            System.out.println("Url: " + new String(ch, start, length));
         }
     }
 }
