@@ -116,8 +116,9 @@ public class Parser extends DefaultHandler{
         } 
         else if (authorbool&& overall) {
             data.addAuthor(new String(ch, start, length));
-            System.out.println("new author: " + new String(ch, start, length));
-        }else if (titlebool&& overall) {
+//            System.out.println("new author: " + new String(ch, start, length));
+        }
+        else if (titlebool&& overall) {
             titlebool = false;
             data.setTitle(new String(ch, start, length));
 //             System.out.println("Title: " + new String(ch, start, length));
