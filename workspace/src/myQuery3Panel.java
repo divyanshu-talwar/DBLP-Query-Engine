@@ -37,8 +37,8 @@ public class myQuery3Panel
     {
         ThrasholdField.setPreferredSize(new Dimension(200,50));
         thresholdText.setPreferredSize(new Dimension(200,50));
-        thresholdText.setFont(new Font("Serif", Font.BOLD, 30));
-        ThrasholdField.setFont(new Font("Serif", Font.BOLD, 30));
+        thresholdText.setFont(new Font("Arial", Font.BOLD, 30));
+        ThrasholdField.setFont(new Font("Arial", Font.BOLD, 30));
         panel4gbc.gridx=0;
         panel4gbc.gridy=0;
         panel4.add(thresholdText, panel4gbc);
@@ -53,11 +53,11 @@ public class myQuery3Panel
         panel4.add(l2, panel4gbc);
         resetButton=new JButton("Reset");
         resetButton.setBackground(Color.gray);
-        resetButton.setFont(new Font("Serif", Font.BOLD, 30));
+        resetButton.setFont(new Font("Arial", Font.BOLD, 30));
         resetButton.setPreferredSize(new Dimension(200,50));
         searchButton=new JButton("Search");
         searchButton.setBackground(Color.gray);
-        searchButton.setFont(new Font("Serif", Font.BOLD, 30));
+        searchButton.setFont(new Font("Arial", Font.BOLD, 30));
         searchButton.setPreferredSize(new Dimension(200,50));
         panel4gbc.gridx=0;
         panel4gbc.gridy=4;
