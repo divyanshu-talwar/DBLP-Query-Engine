@@ -195,7 +195,7 @@ public class myQuery1Panel
         panel2gbc.gridy=0;
         panel2gbc.fill= GridBagConstraints.HORIZONTAL;
         panel2.add(searchByCombo,panel2gbc);
-        JLabel nameTitleLabel= new JLabel("Name/TiTle");
+        JLabel nameTitleLabel= new JLabel("Name/Title");
         nameTitleTextField=new JTextField("");
         nameTitleTextField.setPreferredSize(new Dimension(100,25));
         nameTitleLabel.setPreferredSize(new Dimension(100,25));

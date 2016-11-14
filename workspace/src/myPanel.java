@@ -29,7 +29,7 @@ public class myPanel
         panel2= q1p.panel2;
         myQuery2Panel p3=new myQuery2Panel();
         panel3=p3.getPanel();
-        final DefaultComboBoxModel typeOfQuery = new DefaultComboBoxModel();
+        final DefaultComboBoxModel<String> typeOfQuery = new DefaultComboBoxModel();
         typeOfQuery.addElement("Query");
         typeOfQuery.addElement("Query1");
         typeOfQuery.addElement("Query2");
