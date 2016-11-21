@@ -1,0 +1,105 @@
+\hypertarget{class_parser}{}\section{Parser Class Reference}
+\label{class_parser}\index{Parser@{Parser}}
+Inheritance diagram for Parser\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_parser}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Progress\+Bar}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_parser_a5b20dc7a1c7a26ce3cec6cc070839bd4}{Parser} ()
+\item 
+void \hyperlink{class_parser_a6ca2235d63e8d6ce30a4a7c3e2deb523}{start\+Element} (String uri, String local\+Name, String q\+Name, Attributes attributes)  throws S\+A\+X\+Exception 
+\item 
+void \hyperlink{class_parser_a6235e3c77c809f5012c95629345e0f2f}{end\+Element} (String uri, String local\+Name, String q\+Name)  throws S\+A\+X\+Exception 
+\item 
+void \hyperlink{class_parser_a47bcfb67533ee080c38771c5487edd90}{characters} (char ch\mbox{[}$\,$\mbox{]}, int start, int length)  throws S\+A\+X\+Exception 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{class_parser_a38dd69bd41bda280db654f766a953664}{authorbool} = false
+\item 
+\hyperlink{class_data}{Data} \hyperlink{class_parser_a7eaf97b8d7225ee9f312d7d1c0c96d11}{data}
+\item 
+J\+Progress\+Bar \hyperlink{class_parser_a87d020032494150614c01d977277eda3}{bar}
+\item 
+J\+Frame \hyperlink{class_parser_aa186fb30f99abea1ad8923a549d26f30}{loading}
+\item 
+Progress\+Bar \hyperlink{class_parser_a8e77019b8dfc3cc2a8c2bbc01ff5a657}{pb}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_parser_a5b20dc7a1c7a26ce3cec6cc070839bd4}{}\label{class_parser_a5b20dc7a1c7a26ce3cec6cc070839bd4} 
+\index{Parser@{Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{Parser()}{Parser()}}
+{\footnotesize\ttfamily Parser.\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_parser_a47bcfb67533ee080c38771c5487edd90}{}\label{class_parser_a47bcfb67533ee080c38771c5487edd90} 
+\index{Parser@{Parser}!characters@{characters}}
+\index{characters@{characters}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{characters()}{characters()}}
+{\footnotesize\ttfamily void Parser.\+characters (\begin{DoxyParamCaption}\item[{char}]{ch\mbox{[}$\,$\mbox{]},  }\item[{int}]{start,  }\item[{int}]{length }\end{DoxyParamCaption}) throws S\+A\+X\+Exception}
+
+\hypertarget{class_parser_a6235e3c77c809f5012c95629345e0f2f}{}\label{class_parser_a6235e3c77c809f5012c95629345e0f2f} 
+\index{Parser@{Parser}!end\+Element@{end\+Element}}
+\index{end\+Element@{end\+Element}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{end\+Element()}{endElement()}}
+{\footnotesize\ttfamily void Parser.\+end\+Element (\begin{DoxyParamCaption}\item[{String}]{uri,  }\item[{String}]{local\+Name,  }\item[{String}]{q\+Name }\end{DoxyParamCaption}) throws S\+A\+X\+Exception}
+
+\hypertarget{class_parser_a6ca2235d63e8d6ce30a4a7c3e2deb523}{}\label{class_parser_a6ca2235d63e8d6ce30a4a7c3e2deb523} 
+\index{Parser@{Parser}!start\+Element@{start\+Element}}
+\index{start\+Element@{start\+Element}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{start\+Element()}{startElement()}}
+{\footnotesize\ttfamily void Parser.\+start\+Element (\begin{DoxyParamCaption}\item[{String}]{uri,  }\item[{String}]{local\+Name,  }\item[{String}]{q\+Name,  }\item[{Attributes}]{attributes }\end{DoxyParamCaption}) throws S\+A\+X\+Exception}
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_parser_a38dd69bd41bda280db654f766a953664}{}\label{class_parser_a38dd69bd41bda280db654f766a953664} 
+\index{Parser@{Parser}!authorbool@{authorbool}}
+\index{authorbool@{authorbool}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{authorbool}{authorbool}}
+{\footnotesize\ttfamily boolean Parser.\+authorbool = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_parser_a87d020032494150614c01d977277eda3}{}\label{class_parser_a87d020032494150614c01d977277eda3} 
+\index{Parser@{Parser}!bar@{bar}}
+\index{bar@{bar}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{bar}{bar}}
+{\footnotesize\ttfamily J\+Progress\+Bar Parser.\+bar\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_parser_a7eaf97b8d7225ee9f312d7d1c0c96d11}{}\label{class_parser_a7eaf97b8d7225ee9f312d7d1c0c96d11} 
+\index{Parser@{Parser}!data@{data}}
+\index{data@{data}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \hyperlink{class_data}{Data} Parser.\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_parser_aa186fb30f99abea1ad8923a549d26f30}{}\label{class_parser_aa186fb30f99abea1ad8923a549d26f30} 
+\index{Parser@{Parser}!loading@{loading}}
+\index{loading@{loading}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{loading}{loading}}
+{\footnotesize\ttfamily J\+Frame Parser.\+loading\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_parser_a8e77019b8dfc3cc2a8c2bbc01ff5a657}{}\label{class_parser_a8e77019b8dfc3cc2a8c2bbc01ff5a657} 
+\index{Parser@{Parser}!pb@{pb}}
+\index{pb@{pb}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{pb}{pb}}
+{\footnotesize\ttfamily Progress\+Bar Parser.\+pb\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_parser_8java}{Parser.\+java}\end{DoxyCompactItemize}
