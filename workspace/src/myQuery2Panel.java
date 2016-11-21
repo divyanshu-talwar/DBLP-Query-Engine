@@ -55,7 +55,7 @@ public class myQuery2Panel
         resetButton.setPreferredSize(new Dimension(100,25));
         searchButton=new JButton("Search");
         searchButton.setBackground(Color.gray);
-        searchButton.setFont(new Font("Arial", Font.BOLD, 12));
+		searchButton.setFont(new Font("Arial", Font.BOLD, 12));
         searchButton.setPreferredSize(new Dimension(100,25));
         panel3gbc.gridx=0;
         panel3gbc.gridy=4;
