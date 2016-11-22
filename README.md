@@ -4,7 +4,7 @@
 	* Query 2
 	* GUI
 	* SAX Parser (not parsing)
-  * Parser to be implemented in py for now (jugaad)
+  * Parser to be implemented in Python for now (jugaad)
 
 #Problems/to fix
 	* GUI
