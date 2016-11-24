@@ -1,5 +1,5 @@
 [New User]-(Browse Theatres)
-[New User](Browse Movies)
+[New User]-(Browse Movies)
 [New User]-(Sign Up)
 [Registered User]-(Sign In)
 (Sign In)>(Browse Theatres)
@@ -20,9 +20,5 @@
 (Confirm Ticket)>(Email Ticket)
 (Sign In)>(Cancel Ticket)
 (Cancel Ticket)>(Process Refund)
-
-
-
-
 [New Theater]-(Enroll)
 (Enroll)>(Pay Subscription)
