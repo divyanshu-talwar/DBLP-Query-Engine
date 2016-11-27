@@ -1,4 +1,5 @@
 import java.io.File;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JProgressBar;
@@ -11,14 +12,15 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class Parser extends DefaultHandler {
 
-	private boolean authorbool = false, ignorebool = false, overall = false, articlebool, titlebool = false,
+	private boolean authorbool = false, ignorebool = false, articlebool=false, titlebool = false,
 			yearbool = false, urlbool = false, volumebool = false, pagebool = false, journalbool = false;
 	int c = 0;
 	private Data data;
 	private JProgressBar bar;
 	private JFrame loading;
 	private ProgressBar pb;
-
+	private ArrayList<String> authorName;
+	private ArrayList<String> titleName;
 	class ProgressBar {
 		public ProgressBar() {
 			loading = new JFrame();
@@ -52,30 +54,37 @@ public class Parser extends DefaultHandler {
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 		if (qName.equalsIgnoreCase("article")) {
 			articlebool = true;
-		} else if (qName.equalsIgnoreCase("number") || qName.equalsIgnoreCase("ee")
-				|| qName.equalsIgnoreCase("crossref") || qName.equalsIgnoreCase("isbn")
-				|| qName.equalsIgnoreCase("publisher") || qName.equalsIgnoreCase("series")) {
-			ignorebool = true;
-		} else if (qName.equalsIgnoreCase("author") || qName.equalsIgnoreCase("editor")) {
+			data = new Data();
+		}  
+		else if (qName.equalsIgnoreCase("author") || qName.equalsIgnoreCase("editor")) {
 			authorbool = true;
-		} else if (qName.equalsIgnoreCase("title") || qName.equalsIgnoreCase("book") || qName.equalsIgnoreCase("www")
+			authorName = new ArrayList<String>();
+		}
+		else if (qName.equalsIgnoreCase("title") || qName.equalsIgnoreCase("book") || qName.equalsIgnoreCase("www")
 				|| qName.equalsIgnoreCase("phdthesis") || qName.equalsIgnoreCase("inproceedings")
 				|| qName.equalsIgnoreCase("incollection") || qName.equalsIgnoreCase("proceedings")
 				|| qName.equalsIgnoreCase("mastersThesis")) {
 			titlebool = true;
-		} else if (qName.equalsIgnoreCase("pages")) {
+			titleName = new ArrayList<String>();
+		}
+		else if (qName.equalsIgnoreCase("pages")) {
 			pagebool = true;
-		} else if (qName.equalsIgnoreCase("year")) {
+		}
+		else if (qName.equalsIgnoreCase("year")) {
 			yearbool = true;
-		} else if (qName.equalsIgnoreCase("volume")) {
+		}
+		else if (qName.equalsIgnoreCase("volume")) {
 			volumebool = true;
-		} else if (qName.equalsIgnoreCase("journal") || qName.equalsIgnoreCase("booktitle")) {
+		}
+		else if (qName.equalsIgnoreCase("journal") || qName.equalsIgnoreCase("booktitle")) {
 			journalbool = true;
-		} else if (qName.equalsIgnoreCase("url")) {
+		}
+		else if (qName.equalsIgnoreCase("url")) {
 			urlbool = true;
-		} else if (qName.equalsIgnoreCase("dblp")) {
-			// loading.setVisible(true);
-		} else {
+		}
+		else if (qName.equalsIgnoreCase("dblp")) {
+		}
+		else {
 			ignorebool = true;
 		}
 	}
@@ -83,10 +92,10 @@ public class Parser extends DefaultHandler {
 	@Override
 	public void endElement(String uri, String localName, String qName) throws SAXException {
 		if (qName.equalsIgnoreCase("article")) {
-			if (overall) {
-				Database.allData.add(data);
-				overall = false;
-			}
+			
+			Database.allData.add(data);
+//			System.out.println(data);
+
 			articlebool = false;
 			++c;
 			if (c % 10000 == 0) {
@@ -94,10 +103,30 @@ public class Parser extends DefaultHandler {
 				System.out.println((c / 15233.94) + " %");
 			}
 		}
+		if(qName.equalsIgnoreCase("author")){
+			authorbool = false;
+			StringBuilder name = new StringBuilder();
+			for (String s : authorName)
+			{
+			    name.append(s);
+			}
+			data.addAuthor(name.toString());
+//			System.out.println(name.toString());
+		}
+		if(qName.equalsIgnoreCase("title")){
+			titlebool = false;
+			StringBuilder tname = new StringBuilder();
+			for (String s : titleName)
+			{
+			    tname.append(s);
+			}
+			data.setTitle(tname.toString());
+		}
 		if (qName.equalsIgnoreCase("dblp")) {
 			// bar.setValue(100);
 			System.out.println("100 % " + Database.allData.size());
 		}
+		
 	}
 
 	@Override
@@ -106,43 +135,36 @@ public class Parser extends DefaultHandler {
 			ignorebool = false;
 			return;
 		}
-		if (authorbool && articlebool) {
+		if (authorbool) {
 			String temp = new String(ch, start, length);
-			overall = true;
-			data = new Data();
-			data.addAuthor(temp);
-			authorbool = false;
-		} else if (authorbool && overall) {
-			String temp = new String(ch, start, length);
-			data.addAuthor(temp);
-			System.out.println("new author: " + temp);
-		} else if (titlebool && overall) {
-			titlebool = false;
-			data.setTitle(new String(ch, start, length));
-			// System.out.println("Title: " + new String(ch, start, length));
-		} else if (pagebool && overall) {
+			authorName.add(temp);
+		}
+		else if (titlebool) {
+			titleName.add(new String(ch, start, length));
+		}
+		else if (pagebool) {
 			pagebool = false;
 			data.setPages(new String(ch, start, length));
-			// System.out.println("pages: " + new String(ch, start, length));
-		} else if (yearbool && overall) {
+		}
+		else if (yearbool) {
 			yearbool = false;
 			try {
 				data.setYear(Integer.parseInt(new String(ch, start, length)));
-				// System.out.println("Year: " + Integer.parseInt(new String(ch,
-				// start, length)));
-			} catch (Exception e) {
 			}
-			;
-
-		} else if (volumebool && overall) {
+			catch (Exception e) {
+			}
+		}
+		else if (volumebool) {
 			volumebool = false;
 			data.setVolume(new String(ch, start, length));
 			// System.out.println("volume: " + new String(ch, start, length));
-		} else if (journalbool && overall) {
+		}
+		else if (journalbool) {
 			journalbool = false;
 			data.setJournal_booktitle(new String(ch, start, length));
 			// System.out.println("journal: " + new String(ch, start, length));
-		} else if (urlbool && overall) {
+		}
+		else if (urlbool) {
 			urlbool = false;
 			data.addUrl(new String(ch, start, length));
 			// System.out.println("Url: " + new String(ch, start, length));
