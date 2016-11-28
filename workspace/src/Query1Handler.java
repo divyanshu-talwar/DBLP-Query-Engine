@@ -2,11 +2,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-/**
- * @author mridul
- *
- */
-
 public class Query1Handler {
 
 	private int sortby, from, to;
@@ -55,9 +50,6 @@ public class Query1Handler {
 
 	}
 
-	/**
-	 * 
-	 */
 	void showResult() {
 		Object[][] temp = new Object[list.size()][7];
 		for (int i = 0; i < list.size(); i++) {

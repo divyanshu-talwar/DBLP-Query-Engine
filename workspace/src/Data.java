@@ -15,8 +15,8 @@ public class Data implements Comparable {
 		pages = "NA";
 		year = 0;
 		journal_booktitle = "NA";
-		authors = new ArrayList<>();
-		url = new ArrayList<>();
+		authors = new ArrayList<String>();
+		url = new ArrayList<String>();
 	}
 
 	public void setTitle(String title) {
@@ -40,6 +40,7 @@ public class Data implements Comparable {
 	}
 
 	public void addAuthor(String _author) {
+//		System.out.println(_author);
 		authors.add(_author);
 	}
 
@@ -48,7 +49,7 @@ public class Data implements Comparable {
 	}
 
 	public boolean searchAuthor(String name) {
-		System.out.println("Size is " + authors.size());
+//		System.out.println("Size is " + authors.size());
 		for (int i = 0; i < authors.size(); i++) {
 			if (authors.get(i).toLowerCase().equals(name.toLowerCase()))
 				return true;
@@ -57,24 +58,30 @@ public class Data implements Comparable {
 	}
 
 	public String getAuthor() {
-		String temp = authors.get(0);
-		for (int i = 1; i < authors.size(); i++) {
-			temp += " ," + authors.get(i);
+		StringBuilder temp = new StringBuilder();
+		temp.append(authors.get(0));
+		for (int i = 1; i < authors.size(); i++)
+		{
+			temp.append(", ");
+		    temp.append(authors.get(i));
 		}
-		return temp;
+		return temp.toString();
 
 	}
 
 	public String getUrl() {
 		try {
-			String temp = url.get(0);
-			if (temp == null) {
+			StringBuilder temp = new StringBuilder();
+			temp.append(url.get(0));
+			if (temp.toString() == null) {
 				return "NA";
 			}
-			for (int i = 1; i < url.size(); i++) {
-				temp += ", " + url.get(i);
+			for (int i = 1; i < url.size(); i++)
+			{
+				temp.append(",");
+			    temp.append(url.get(i));
 			}
-			return temp;
+			return temp.toString();
 		} catch (Exception e) {
 			return "NA";
 		}
@@ -111,6 +118,7 @@ public class Data implements Comparable {
 	}
 
 	public String toString() {
+
 		return authors + " " + title + " " + pages + " " + volume + " " + journal_booktitle + " " + year + " " + url;
 	}
 }
