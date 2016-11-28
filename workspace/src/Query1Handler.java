@@ -26,6 +26,7 @@ public class Query1Handler {
 			for (int i = 0; i < Database.allData.size(); i++) {
 				// System.out.println("sup");
 				Data tmpData = Database.allData.get(i);
+				Author tmpAuthor = Database.authors.get(i);
 				if (tmpData.searchAuthor(name_title) && tmpData.getYear() >= from && tmpData.getYear() <= to) {
 					list.add(Database.allData.get(i));
 				}
