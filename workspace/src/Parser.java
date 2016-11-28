@@ -25,7 +25,7 @@ public class Parser extends DefaultHandler {
 		public ProgressBar() {
 			loading = new JFrame();
 			loading.setSize(600, 40);
-			bar = new JProgressBar(0, 1523384);
+			bar = new JProgressBar(0, 1529443);
 			bar.setValue(0);
 			bar.setStringPainted(true);
 			loading.add(bar);
@@ -99,7 +99,7 @@ public class Parser extends DefaultHandler {
 			++c;
 			if (c % 10000 == 0) {
 				bar.setValue(c);
-				System.out.println((c / 15233.94) + " %");
+				System.out.println((c / 15294.43) + " %");
 			}
 		}
 		if(qName.equalsIgnoreCase("author")){
