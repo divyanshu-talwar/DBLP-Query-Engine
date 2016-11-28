@@ -25,6 +25,7 @@ public class Query2Handler
                 map.put(a,0);
             }
         }
+        System.out.println(map.size());
         for(int i=0;i<Database.allData.size();i++)
         {
             for(String a : Database.allData.get(i).getRawAuthor())
