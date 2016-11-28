@@ -94,9 +94,8 @@ public class Parser extends DefaultHandler {
 		if (qName.equalsIgnoreCase("article")) {
 			
 			Database.allData.add(data);
-//			System.out.println(data);
-
 			articlebool = false;
+
 			++c;
 			if (c % 10000 == 0) {
 				bar.setValue(c);
@@ -111,7 +110,6 @@ public class Parser extends DefaultHandler {
 			    name.append(s);
 			}
 			data.addAuthor(name.toString());
-//			System.out.println(name.toString());
 		}
 		if(qName.equalsIgnoreCase("title")){
 			titlebool = false;
@@ -123,7 +121,6 @@ public class Parser extends DefaultHandler {
 			data.setTitle(tname.toString());
 		}
 		if (qName.equalsIgnoreCase("dblp")) {
-			// bar.setValue(100);
 			System.out.println("100 % " + Database.allData.size());
 		}
 		

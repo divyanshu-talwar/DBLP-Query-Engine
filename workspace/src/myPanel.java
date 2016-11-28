@@ -34,7 +34,7 @@ public class myPanel {
 		queryCombo.setFont(new Font("Arial", Font.BOLD, 12));
 		queryCombo.setSelectedIndex(0);
 		queryCombo.setPreferredSize(new Dimension(100, 25));
-		queryCombo.setBackground(Color.cyan);
+//		queryCombo.setBackground(Color.cyan);
 		gbc.gridx = 0;
 		gbc.gridy = 0;
 		// gbc.fill= GridBagConstraints.HORIZONTAL;
@@ -96,8 +96,23 @@ public class myPanel {
 				if (searchBy.charAt(0) == 'N') {
 					if (q1p.sort.getSelectedCheckbox().toString().charAt(26) == '0') {
 						Query1Handler q1 = new Query1Handler(name_title, 1, from, to);
-						q1.doWork();
+						q1.doWork(true);
 					}
+					else{
+						Query1Handler q1 = new Query1Handler(name_title, 2, from, to);
+						q1.doWork(true);						
+					}
+				}
+				if (searchBy.charAt(0) == 'T') {
+					if (q1p.sort.getSelectedCheckbox().toString().charAt(26) == '0') {
+						Query1Handler q1 = new Query1Handler(name_title, 1, from, to);
+						q1.doWork(false);
+					}
+					else{
+						Query1Handler q1 = new Query1Handler(name_title, 2, from, to);
+						q1.doWork(false);						
+					}
+
 				}
 
 			}

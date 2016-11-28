@@ -15,18 +15,18 @@ public class myQuery2Panel
     {
         panel3gbc.insets= new Insets(10,10,10,10);
         prepareGui();
-        colorize();
+//        colorize();
         buttonWorking();
     }
 
-    private void colorize()
-    {
-        text.setForeground(Color.cyan);
-        text.setBackground(Color.gray);
-        resetButton.setBackground(Color.cyan);
-        searchButton.setBackground(Color.cyan);
-        panel3.setBackground(Color.gray);
-    }
+//    private void colorize()
+//    {
+//        text.setForeground(Color.cyan);
+//        text.setBackground(Color.gray);
+//        resetButton.setBackground(Color.cyan);
+//        searchButton.setBackground(Color.cyan);
+//        panel3.setBackground(Color.gray);
+//    }
 
 
     public void prepareGui()
@@ -50,11 +50,11 @@ public class myQuery2Panel
 //        panel3gbc.gridy=3;
 //        panel3.add(l2,panel3gbc);
         resetButton=new JButton("Reset");
-        resetButton.setBackground(Color.gray);
+//        resetButton.setBackground(Color.gray);
         resetButton.setFont(new Font("Arial", Font.BOLD, 12));
         resetButton.setPreferredSize(new Dimension(100,25));
         searchButton=new JButton("Search");
-        searchButton.setBackground(Color.gray);
+//        searchButton.setBackground(Color.gray);
 		searchButton.setFont(new Font("Arial", Font.BOLD, 12));
         searchButton.setPreferredSize(new Dimension(100,25));
         panel3gbc.gridx=0;
