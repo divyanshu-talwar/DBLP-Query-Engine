@@ -25,7 +25,7 @@ public class Parser extends DefaultHandler {
 		public ProgressBar() {
 			loading = new JFrame();
 			loading.setSize(600, 40);
-			bar = new JProgressBar(0, 1523384);
+			bar = new JProgressBar(0, 1529443);
 			bar.setValue(0);
 			bar.setStringPainted(true);
 			loading.add(bar);
@@ -94,13 +94,12 @@ public class Parser extends DefaultHandler {
 		if (qName.equalsIgnoreCase("article")) {
 			
 			Database.allData.add(data);
-//			System.out.println(data);
-
 			articlebool = false;
+
 			++c;
 			if (c % 10000 == 0) {
 				bar.setValue(c);
-				System.out.println((c / 15233.94) + " %");
+				System.out.println((c / 15294.43) + " %");
 			}
 		}
 		if(qName.equalsIgnoreCase("author")){
@@ -111,7 +110,6 @@ public class Parser extends DefaultHandler {
 			    name.append(s);
 			}
 			data.addAuthor(name.toString());
-//			System.out.println(name.toString());
 		}
 		if(qName.equalsIgnoreCase("title")){
 			titlebool = false;
@@ -123,7 +121,6 @@ public class Parser extends DefaultHandler {
 			data.setTitle(tname.toString());
 		}
 		if (qName.equalsIgnoreCase("dblp")) {
-			// bar.setValue(100);
 			System.out.println("100 % " + Database.allData.size());
 		}
 		

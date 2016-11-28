@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 
 public class Query1Handler {
 
@@ -20,12 +21,23 @@ public class Query1Handler {
 	/**
 	 * 
 	 */
-	public void doWork() {
-		for (int i = 0; i < Database.allData.size(); i++) {
-			// System.out.println("sup");
-			Data tmpData = Database.allData.get(i);
-			if (tmpData.searchAuthor(name_title) && tmpData.getYear() >= from && tmpData.getYear() <= to) {
-				list.add(Database.allData.get(i));
+	public void doWork(boolean searchBy) {
+		if(searchBy){
+			for (int i = 0; i < Database.allData.size(); i++) {
+				// System.out.println("sup");
+				Data tmpData = Database.allData.get(i);
+				if (tmpData.searchAuthor(name_title) && tmpData.getYear() >= from && tmpData.getYear() <= to) {
+					list.add(Database.allData.get(i));
+				}
+			}
+		}
+		else{
+			for (int i = 0; i < Database.allData.size(); i++) {
+				// System.out.println("sup");
+				Data tmpData = Database.allData.get(i);
+				if (tmpData.getTitle().equals(name_title) && tmpData.getYear() >= from && tmpData.getYear() <= to) {
+					list.add(Database.allData.get(i));
+				}
 			}
 		}
 
@@ -49,7 +61,21 @@ public class Query1Handler {
 		}
 
 	}
-
+//
+//    public void findSimilarNames() {
+//        Iterator it = Database.allData.iterator();
+//        Data tmp;
+//
+//        while (it.hasNext()) {
+//            tmp = (Data) it.next();
+//            ArrayList<String> auth= tmp.getRawAuthor();
+//            for (int i=0; i<auth.size(); i++) {
+//                    if (auth.get(i).contains(name_title))
+//                        list.add(tmp);
+//            }
+//        }
+//    }
+    
 	void showResult() {
 		Object[][] temp = new Object[list.size()][7];
 		for (int i = 0; i < list.size(); i++) {

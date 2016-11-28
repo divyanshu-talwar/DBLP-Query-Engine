@@ -15,19 +15,19 @@ public class myQuery3Panel {
 	public myQuery3Panel() {
 		panel4gbc.insets = new Insets(10, 10, 10, 10);
 		prepareGui();
-		colorize();
+//		colorize();
 		buttonWorking();
 	}
 
-	private void colorize() {
-		thresholdText.setForeground(Color.cyan);
-		thresholdText.setBackground(Color.gray);
-		nameText.setForeground(Color.cyan);
-		nameText.setBackground(Color.gray);
-		resetButton.setBackground(Color.cyan);
-		searchButton.setBackground(Color.cyan);
-		panel4.setBackground(Color.gray);
-	}
+//	private void colorize() {
+//		thresholdText.setForeground(Color.cyan);
+//		thresholdText.setBackground(Color.gray);
+//		nameText.setForeground(Color.cyan);
+//		nameText.setBackground(Color.gray);
+//		resetButton.setBackground(Color.cyan);
+//		searchButton.setBackground(Color.cyan);
+//		panel4.setBackground(Color.gray);
+//	}
 
 	public void prepareGui() {
 		ThrasholdField.setPreferredSize(new Dimension(200, 50));
@@ -47,11 +47,11 @@ public class myQuery3Panel {
 		panel4gbc.gridy = 3;
 		panel4.add(l2, panel4gbc);
 		resetButton = new JButton("Reset");
-		resetButton.setBackground(Color.gray);
+//		resetButton.setBackground(Color.gray);
 		resetButton.setFont(new Font("Arial", Font.BOLD, 30));
 		resetButton.setPreferredSize(new Dimension(200, 50));
 		searchButton = new JButton("Search");
-		searchButton.setBackground(Color.gray);
+//		searchButton.setBackground(Color.gray);
 		searchButton.setFont(new Font("Arial", Font.BOLD, 30));
 		searchButton.setPreferredSize(new Dimension(200, 50));
 		panel4gbc.gridx = 0;
