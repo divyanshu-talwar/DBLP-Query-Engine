@@ -233,7 +233,7 @@ public class Data implements Comparable {
 
 	/**
 	 * @param name_title
-	 * @return
+	 * @return boolean if string are related
 	 */
 	public boolean searchRelAuthor(String name_title) {
 		for (int i = 0; i < authors.size(); i++) {
