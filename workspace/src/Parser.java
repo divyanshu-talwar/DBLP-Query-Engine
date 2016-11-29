@@ -13,7 +13,7 @@ import org.xml.sax.helpers.DefaultHandler;
 public class Parser extends DefaultHandler {
 
 	private boolean authorbool = false, ignorebool = false, articlebool=false, titlebool = false,
-			yearbool = false, urlbool = false, volumebool = false, pagebool = false, journalbool = false;
+			yearbool = false, urlbool = false, volumebool = false, pagebool = false, journalbool = false, wwwbool = false;
 	int c = 0;
 	private Data data;
 	private JProgressBar bar;
@@ -60,12 +60,14 @@ public class Parser extends DefaultHandler {
 			authorbool = true;
 			authorName = new ArrayList<String>();
 		}
-		else if (qName.equalsIgnoreCase("title") || qName.equalsIgnoreCase("book") || qName.equalsIgnoreCase("www")
-				|| qName.equalsIgnoreCase("phdthesis") || qName.equalsIgnoreCase("inproceedings")
+		else if (qName.equalsIgnoreCase("title") || qName.equalsIgnoreCase("book") || qName.equalsIgnoreCase("phdthesis") || qName.equalsIgnoreCase("inproceedings")
 				|| qName.equalsIgnoreCase("incollection") || qName.equalsIgnoreCase("proceedings")
 				|| qName.equalsIgnoreCase("mastersThesis")) {
 			titlebool = true;
 			titleName = new ArrayList<String>();
+		}
+		else if (qName.equalsIgnoreCase("www")){
+			wwwbool = true;
 		}
 		else if (qName.equalsIgnoreCase("pages")) {
 			pagebool = true;
@@ -102,7 +104,7 @@ public class Parser extends DefaultHandler {
 				System.out.println((c / 15294.43) + " %");
 			}
 		}
-		if(qName.equalsIgnoreCase("author")){
+		else if(qName.equalsIgnoreCase("author") && !wwwbool ){
 			authorbool = false;
 			StringBuilder name = new StringBuilder();
 			for (String s : authorName)
@@ -111,7 +113,7 @@ public class Parser extends DefaultHandler {
 			}
 			data.addAuthor(name.toString());
 		}
-		if(qName.equalsIgnoreCase("title")){
+		else if(qName.equalsIgnoreCase("title") && !wwwbool){
 			titlebool = false;
 			StringBuilder tname = new StringBuilder();
 			for (String s : titleName)
@@ -120,7 +122,10 @@ public class Parser extends DefaultHandler {
 			}
 			data.setTitle(tname.toString());
 		}
-		if (qName.equalsIgnoreCase("dblp")) {
+		else if (qName.equalsIgnoreCase("www")){
+			wwwbool = false;
+		}
+		else if (qName.equalsIgnoreCase("dblp")) {
 			System.out.println("100 % " + Database.allData.size());
 		}
 		
@@ -132,11 +137,11 @@ public class Parser extends DefaultHandler {
 			ignorebool = false;
 			return;
 		}
-		if (authorbool) {
+		if (authorbool && !wwwbool) {
 			String temp = new String(ch, start, length);
 			authorName.add(temp);
 		}
-		else if (titlebool) {
+		else if (titlebool && !wwwbool) {
 			titleName.add(new String(ch, start, length));
 		}
 		else if (pagebool) {
