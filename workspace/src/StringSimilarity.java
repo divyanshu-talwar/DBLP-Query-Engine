@@ -2,7 +2,7 @@
  *
  * @author Mridul Gupta | Divyanshu Talwar
  */
-package entity;
+
 
 import java.io.Serializable;
 

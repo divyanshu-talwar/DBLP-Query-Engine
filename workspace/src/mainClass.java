@@ -5,7 +5,10 @@
 
 public class mainClass {
 	
-	
+	/**
+	 * Main working class
+	 * @param String[] args
+	 */
     public static void main(String[] args){
         Parser p = new Parser();
         ParseEntityResolution per = new ParseEntityResolution();
