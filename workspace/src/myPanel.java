@@ -158,7 +158,7 @@ public class myPanel {
 					if(q1p.sort.getSelectedCheckbox()==null){
 						JOptionPane.showMessageDialog(null, "Please make sure that one of the radio buttons is checked ","Radio button not checked",JOptionPane.WARNING_MESSAGE);
 					}
-					else if (q1p.sort.getSelectedCheckbox().toString().charAt(26) == '0') {
+					else if (q1p.sort.getSelectedCheckbox().getLabel().charAt(8) == 'Y') {
 						Query1Handler q1 = new Query1Handler(name_title, 1, from, to);
 						q1.doWork(true);
 						statusBarUpdate();
@@ -173,7 +173,7 @@ public class myPanel {
 					if(q1p.sort.getSelectedCheckbox().toString().equals("")){
 						JOptionPane.showMessageDialog(null, "Please make sure that one of the radio buttons is checked ","Radio button not checked",JOptionPane.WARNING_MESSAGE);
 					}
-					else if (q1p.sort.getSelectedCheckbox().toString().charAt(26) == '0') {
+					else if (q1p.sort.getSelectedCheckbox().getLabel().charAt(8) == 'Y') {
 						Query1Handler q1 = new Query1Handler(name_title, 1, from, to);
 						q1.doWork(false);
 						statusBarUpdate();
