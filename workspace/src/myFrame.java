@@ -88,6 +88,10 @@ public class myFrame extends JFrame
         next.addActionListener(al);
         prev.addActionListener(al);
 
+		panel.statusBar.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.statusBar.setVerticalAlignment(SwingConstants.CENTER);
+		panel.statusBar.setForeground(Color.BLACK);
+		panel.statusBar.setBorder(BorderFactory.createLineBorder(new Color(0,100,100)));
         JPanel Rpanel = new JPanel(new BorderLayout());
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(prev);

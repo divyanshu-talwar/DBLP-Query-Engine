@@ -4,7 +4,6 @@
  * @author Mridul Gupta | Divyanshu Talwar
  */
 import java.util.ArrayList;
-import entity.Jaccard;
 
 public class Data implements Comparable {
 	private String title; /**< Publication Title. */ 

@@ -26,13 +26,9 @@ public class myPanel {
 	private myQuery1Panel q1p;
 	private GridBagConstraints gbc = new GridBagConstraints();
 	private JComboBox queryCombo;
-	public JLabel statusBar =  new JLabel("Welcome!!");
+	public static JLabel statusBar =  new JLabel("Welcome!!");
 	
 	public myPanel() {
-		statusBar.setHorizontalAlignment(SwingConstants.CENTER);
-		statusBar.setVerticalAlignment(SwingConstants.CENTER);
-		statusBar.setForeground(Color.BLACK);
-		statusBar.setBorder(BorderFactory.createLineBorder(new Color(0,100,100)));
 		panel.setOpaque(false);
 		// gbc.insets= new Insets(20,20,20,20);
 		q1p = new myQuery1Panel();
@@ -150,10 +146,12 @@ public class myPanel {
 					else if (q1p.sort.getSelectedCheckbox().toString().charAt(26) == '0') {
 						Query1Handler q1 = new Query1Handler(name_title, 1, from, to);
 						q1.doWork(true);
+						statusBarUpdate();
 					}
 					else {
 						Query1Handler q1 = new Query1Handler(name_title, 2, from, to);
-						q1.doWork(true);						
+						q1.doWork(true);
+						statusBarUpdate();
 					}
 				}
 				if (searchBy.charAt(0) == 'T') {
@@ -163,16 +161,32 @@ public class myPanel {
 					else if (q1p.sort.getSelectedCheckbox().toString().charAt(26) == '0') {
 						Query1Handler q1 = new Query1Handler(name_title, 1, from, to);
 						q1.doWork(false);
+						statusBarUpdate();
 					}
 					else{
 						Query1Handler q1 = new Query1Handler(name_title, 2, from, to);
-						q1.doWork(false);						
+						q1.doWork(false);
+						statusBarUpdate();
 					}
 
 				}
 
 			}
 		});
+	}
+	
+	public static void statusBarUpdate(){
+		if(Database.resultCount == 0){
+//			System.out.println("i am here");
+	        statusBar.setForeground(Color.RED);
+	        statusBar.setText("No results to display!!");
+		}
+		else{
+//			System.out.println("i am here");
+	        statusBar.setForeground(Color.BLACK);
+	        statusBar.setText("Result Count : " + Database.resultCount);
+		}
+
 	}
 
 	public JPanel getPanel() {

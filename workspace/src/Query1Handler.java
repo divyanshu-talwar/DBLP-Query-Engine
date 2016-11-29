@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import entity.Jaccard;
 
 public class Query1Handler {
 
@@ -129,6 +128,7 @@ public class Query1Handler {
 		}
 
 		sort();
+		Database.resultCount = list.size();
 //		print();
 		showResult();
 	}
