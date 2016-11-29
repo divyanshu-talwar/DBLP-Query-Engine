@@ -1,4 +1,4 @@
-cp Data.java Database.java Parser.java Query1Handler.java Query2Handler.java Query3Handler.java ResultPanel.java mainClass.java myFrame.java myPanel.java myQuery1Panel.java myQuery2Panel.java myQuery3Panel.java ~/Documents/workspace/DBLP\ Query\ Engine/src/
+cp Author.java ParseEntityResolution.java Data.java Database.java Parser.java Query1Handler.java Query2Handler.java Query3Handler.java ResultPanel.java mainClass.java myFrame.java myPanel.java myQuery1Panel.java myQuery2Panel.java myQuery3Panel.java ~/Documents/workspace/DBLP\ Query\ Engine/src/
 # cp Database.java /Users/mridul/Documents/workspace/DBLP Query Engine/src/
 # cp Parser.java /Users/mridul/Documents/workspace/DBLP Query Engine/src/
 # cp Query1Handler.java /Users/mridul/Documents/workspace/DBLP Query Engine/src/
