@@ -40,7 +40,7 @@ public class Parser extends DefaultHandler {
 		System.setProperty("jdk.xml.entityExpansionLimit", "0");
 		pb = new ProgressBar();
 		try {
-			File inputFile = new File("test.xml");
+			File inputFile = new File("dblp.xml");
 			SAXParserFactory factory = SAXParserFactory.newInstance();
 			SAXParser saxParser = factory.newSAXParser();
 			saxParser.parse(inputFile, this);

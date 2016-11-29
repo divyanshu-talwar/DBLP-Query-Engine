@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import entity.Jaccard;
+
 public class Data implements Comparable {
 	private String title;
 	private int year;
@@ -8,6 +10,16 @@ public class Data implements Comparable {
 	private String journal_booktitle;
 	private ArrayList<String> authors;
 	private ArrayList<String> url;
+	
+	private Double relevance;
+	
+	public void setRelevance(Double s){
+		relevance=s;
+	}
+	
+	public Double getRelevance(){
+		return relevance;
+	}
 
 	public Data() {
 		title = "NA";
@@ -17,6 +29,7 @@ public class Data implements Comparable {
 		journal_booktitle = "NA";
 		authors = new ArrayList<String>();
 		url = new ArrayList<String>();
+		relevance = (double) 0;
 	}
 
 	public void setTitle(String title) {
@@ -51,7 +64,7 @@ public class Data implements Comparable {
 	public boolean searchAuthor(String name) {
 //		System.out.println("Size is " + authors.size());
 		for (int i = 0; i < authors.size(); i++) {
-			if (authors.get(i).toLowerCase().equals(name.toLowerCase()))
+			if (authors.get(i).equalsIgnoreCase(name))
 				return true;
 		}
 		return false;
@@ -120,5 +133,20 @@ public class Data implements Comparable {
 	public String toString() {
 
 		return authors + " " + title + " " + pages + " " + volume + " " + journal_booktitle + " " + year + " " + url;
+	}
+
+	/**
+	 * @param name_title
+	 * @return
+	 */
+	public boolean searchRelAuthor(String name_title) {
+		for (int i = 0; i < authors.size(); i++) {
+			String s1=authors.get(i),s2=name_title;
+			Jaccard J = new Jaccard(2);
+			Double tolerance = 0.4;
+			if (J.similarity(s1, s2)>=tolerance)
+				return true;
+		}
+		return false;
 	}
 }

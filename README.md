@@ -4,8 +4,12 @@
 	* Query 2
 	* GUI
 	* SAX Parser (not parsing)
+<<<<<<< HEAD
+  * Parser to be implemented in Python for now (jugaad)
+=======
     * Parser to be implemented in Python for now (jugaad)
 
+>>>>>>> master
 
 #Problems/to fix
 	* GUI
