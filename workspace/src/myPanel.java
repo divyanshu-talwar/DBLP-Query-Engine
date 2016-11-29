@@ -122,7 +122,7 @@ public class myPanel {
 					}
 					
 					to = 9999;
-				} else {
+				} else if (yearSelect.charAt(0) == 'C'){
 	//				if(q1p.fromTextField.getText().equals("")){
 	//					JOptionPane.showMessageDialog(null, "Please enter a valid 'from' year","From field empty",JOptionPane.WARNING_MESSAGE);
 	//				}
@@ -149,8 +149,9 @@ public class myPanel {
 	
 						}
 					}
-				
-
+				}
+				else if(yearSelect.charAt(0) == 'Y'){
+					JOptionPane.showMessageDialog(null, "Please make sure that year select field is selected","year select field not selected",JOptionPane.WARNING_MESSAGE);
 				}
 				if (searchBy.charAt(0) == 'N') {
 //					System.out.print(q1p.sort.getSelectedCheckbox().getLabel());
@@ -183,6 +184,9 @@ public class myPanel {
 						statusBarUpdate();
 					}
 
+				}
+				if (searchBy.charAt(0) == 'S'){
+					JOptionPane.showMessageDialog(null, "Please make sure that sort by field is selected","Sort By field not selected",JOptionPane.WARNING_MESSAGE);
 				}
 
 			}
