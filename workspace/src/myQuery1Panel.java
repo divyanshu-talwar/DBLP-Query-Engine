@@ -21,7 +21,7 @@ public class myQuery1Panel
 
     public myQuery1Panel()
     {
-//        panel2gbc.insets= new Insets(10,10,10,10);
+    	panel2gbc.insets= new Insets(5,5,5,5);
         prepareSearchByComboBox();
         prepareYearSearchComboBox();
         prepareCheckBoxUI();
@@ -175,11 +175,11 @@ public class myQuery1Panel
 //        to.setForeground(Color.cyan);
         to.setFont(new Font("Arial", Font.BOLD, 12));
         toTextField.setFont(new Font("Arial", Font.BOLD, 12));
-        panel2gbc.gridx=2;
-        //panel2gbc.gridy=3;
+        panel2gbc.gridx=0;
+        panel2gbc.gridy=4;
         panel2.add(to,panel2gbc);
-        panel2gbc.gridx=3;
-        //panel2gbc.gridy=3;
+        panel2gbc.gridx=1;
+        panel2gbc.gridy=4;
         panel2.add(toTextField,panel2gbc);
         to.setVisible(false);
         toTextField.setVisible(false);
