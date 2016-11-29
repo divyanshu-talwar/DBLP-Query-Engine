@@ -28,7 +28,7 @@ public class ParseEntityResolution extends DefaultHandler {
 	public ParseEntityResolution() {
 		System.setProperty("jdk.xml.entityExpansionLimit", "0");
 		try {
-			File inputFile = new File("test.xml");
+			File inputFile = new File("dblp.xml");
 			SAXParserFactory factory = SAXParserFactory.newInstance();
 			SAXParser saxParser = factory.newSAXParser();
 			saxParser.parse(inputFile, this);
@@ -108,7 +108,7 @@ public class ParseEntityResolution extends DefaultHandler {
 		for (Author x : Database.authors) {
 			// System.out.println("next");
 			for (String y : x.getAlias()) {
-				System.out.println("hi : " + y);
+//				System.out.println("hi : " + y);
 			}
 		}
 

@@ -1,0 +1,9 @@
+[New User||+BrowseMovies();+SignUp()],
+[New User]^-[Registered User|-Name:String;-Email:String;-Password:String|+BookTicket();+Login();+Logout();+BookTicket();+MakePayment();+CancelTicket()]
+[Registered User]1..*-1..*[BookTicket|-MovieName:String;-TicketsAvailable:Integer;Date:DateTime;Time:DateTime;Venue:String|+UpdateAvailableSeats()]
+[Registered User]1-[MakePayment|-UserID:String;-TransactionID:String;-Amount:Double|+ConfirmTransaction();+CancelTransaction();+ReturnMoney()]
+[New User]1..*-1..*[Movie|-MovieName:String;-MovieTime:DateTime|+UpdateMovieDetails()]
+[Movie]0..*-1[Portal Administrator|-AdminID:String;-AdminName:String;Password:String|+AddMovieRecords(Movie):void;+AddCinemaRecords(Cinema):void;+UpdateMovieRecords(Movie):void;+UpdateCinemaRecords(Cinema):void;+DeleteMovieRecords(Movie):void;+DeleteCinemaRecords(Movie):void]
+[<<Interface>>;Payment||+MethodofPayment:void]
+
+

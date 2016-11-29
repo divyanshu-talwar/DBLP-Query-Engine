@@ -1,5 +1,5 @@
 /**
- *
+ * Tester Class for Relevance Pattern Matching
  * @author Mridul Gupta | Divyanshu Talwar
  */
 
