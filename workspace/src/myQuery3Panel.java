@@ -1,3 +1,4 @@
+
 /**
  *
  * @author Mridul Gupta | Divyanshu Talwar
@@ -9,31 +10,39 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class myQuery3Panel {
-	private JButton resetButton, searchButton;
-	private JPanel panel4 = new JPanel(new GridBagLayout());
-	private GridBagConstraints panel4gbc = new GridBagConstraints();
-	private JTextField ThrasholdField = new JTextField();
-	private JLabel thresholdText = new JLabel("Till Year");
-	private JTextField nameField = new JTextField();
-	private JLabel nameText = new JLabel("Name");
 
+	private JButton resetButton; /**< Button to Reset */
+	private JButton searchButton; /**< Button to Start search */
+	private JPanel panel4 = new JPanel(new GridBagLayout()); /**< New GridBag layout for Query3 Panel */
+	private GridBagConstraints panel4gbc = new GridBagConstraints(); /**< New GridBag Constraints */ 
+	private JTextField ThrasholdField = new JTextField(); /**< JTextField for "Threshold" Year */ 
+	private JLabel thresholdText = new JLabel("Till Year"); /**< JLabel for "Threshold" Year */
+	private JTextField nameField = new JTextField(); /**< JTextField for Author name */ 
+	private JLabel nameText = new JLabel("Name"); /**< JLabel for Author name */
+	
+	/**
+	 * Constructor. Setting up GUI. Preparing buttons
+	 */
 	public myQuery3Panel() {
 		panel4gbc.insets = new Insets(10, 10, 10, 10);
 		prepareGui();
-//		colorize();
+		// colorize();
 		buttonWorking();
 	}
 
-//	private void colorize() {
-//		thresholdText.setForeground(Color.cyan);
-//		thresholdText.setBackground(Color.gray);
-//		nameText.setForeground(Color.cyan);
-//		nameText.setBackground(Color.gray);
-//		resetButton.setBackground(Color.cyan);
-//		searchButton.setBackground(Color.cyan);
-//		panel4.setBackground(Color.gray);
-//	}
+	// private void colorize() {
+	// thresholdText.setForeground(Color.cyan);
+	// thresholdText.setBackground(Color.gray);
+	// nameText.setForeground(Color.cyan);
+	// nameText.setBackground(Color.gray);
+	// resetButton.setBackground(Color.cyan);
+	// searchButton.setBackground(Color.cyan);
+	// panel4.setBackground(Color.gray);
+	// }
 
+	/**
+	 * Preparing buttons and texts and shizz
+	 */
 	public void prepareGui() {
 		ThrasholdField.setPreferredSize(new Dimension(200, 50));
 		thresholdText.setPreferredSize(new Dimension(200, 50));
@@ -52,11 +61,11 @@ public class myQuery3Panel {
 		panel4gbc.gridy = 3;
 		panel4.add(l2, panel4gbc);
 		resetButton = new JButton("Reset");
-//		resetButton.setBackground(Color.gray);
+		// resetButton.setBackground(Color.gray);
 		resetButton.setFont(new Font("Arial", Font.BOLD, 30));
 		resetButton.setPreferredSize(new Dimension(200, 50));
 		searchButton = new JButton("Search");
-//		searchButton.setBackground(Color.gray);
+		// searchButton.setBackground(Color.gray);
 		searchButton.setFont(new Font("Arial", Font.BOLD, 30));
 		searchButton.setPreferredSize(new Dimension(200, 50));
 		panel4gbc.gridx = 0;
@@ -67,6 +76,9 @@ public class myQuery3Panel {
 		panel4.add(resetButton, panel4gbc);
 	}
 
+	/**
+	 * Adds ActionListener to the Search and Reset buttons
+	 */
 	public void buttonWorking() {
 		resetButton.addActionListener(new ActionListener() {
 			@Override
@@ -84,6 +96,11 @@ public class myQuery3Panel {
 		});
 	}
 
+	/**
+	 * Returns the Query 3Panel
+	 * 
+	 * @return JPanel panel4
+	 */
 	public JPanel getPanel() {
 		return panel4;
 	}

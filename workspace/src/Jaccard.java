@@ -47,8 +47,8 @@ public class Jaccard extends ShingleBased
 	/**
 	 * Compute jaccard index: |A inter B| / |A union B|.
 	 * 
-	 * @param s1
-	 * @param s2
+	 * @param String s11
+	 * @param String s22
 	 * @return
 	 */
 	public final double similarity(String s11, String s22) {

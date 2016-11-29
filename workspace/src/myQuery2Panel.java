@@ -1,5 +1,6 @@
 /**
- *
+ * Query 2 = Give number of publications of an author
+ * GUI Panel
  * @author Mridul Gupta | Divyanshu Talwar
  */
 
@@ -10,12 +11,16 @@ import java.awt.event.ActionListener;
 
 public class myQuery2Panel
 {
-    private JButton resetButton,searchButton;
-    private JPanel panel3=new JPanel(new GridBagLayout());
-    private GridBagConstraints panel3gbc= new GridBagConstraints();
-    private JTextField field= new JTextField();
-    private JLabel text= new JLabel("Threshold");
-
+    private JButton resetButton; /**< Button to Reset */
+    private JButton searchButton; /**< Button to Start search */
+    private JPanel panel3=new JPanel(new GridBagLayout()); /**< New GridBag layout for Query2 Panel */
+    private GridBagConstraints panel3gbc= new GridBagConstraints(); /**< New GridBag Constraints */ 
+    private JTextField field= new JTextField(); /**< JTextField for "Threshold" of Publications */ 
+    private JLabel text= new JLabel("Threshold"); /**< JLabel for "Threshold" of Publications */ 
+    
+    /**
+	 * Constructor. Setting up GUI. Preparing buttons
+	 */
     public myQuery2Panel()
     {
         panel3gbc.insets= new Insets(10,10,10,10);
@@ -33,7 +38,9 @@ public class myQuery2Panel
 //        panel3.setBackground(Color.gray);
 //    }
 
-
+    /**
+	 * Preparing buttons and texts and shizz
+	 */
     public void prepareGui()
     {
        
@@ -69,7 +76,10 @@ public class myQuery2Panel
         panel3gbc.gridy=4;
         panel3.add(resetButton,panel3gbc);
     }
-
+    
+    /**
+     * Adds ActionListener to the Search and Reset buttons
+     */
     public void buttonWorking()
     {
         resetButton.addActionListener(new ActionListener() {
@@ -82,7 +92,8 @@ public class myQuery2Panel
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-				try{
+//                Query2Handler q2= new Query2Handler(Integer.parseInt(field.getText()));
+                try{
 	                Query2Handler q2= new Query2Handler(Integer.parseInt(field.getText()));
 	                myPanel.statusBarUpdate();
 				}
@@ -92,7 +103,12 @@ public class myQuery2Panel
             }
         });
     }
-
+    
+    /**
+	 * Returns the Panel for Query 2
+	 * 
+	 * @return JPanel panel3
+	 */
     public JPanel getPanel()
     {
         return panel3;
