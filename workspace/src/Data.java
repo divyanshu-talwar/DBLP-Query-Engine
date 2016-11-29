@@ -219,13 +219,24 @@ public class Data implements Comparable {
 	public ArrayList<String> getRawAuthor() {
 		return authors;
 	}
-
+	
+	
+	/**
+	 * Compares two Date objects by Year
+	 * @return int
+	 * 
+	 */
 	@Override
 	public int compareTo(Object o) {
 		int temp = ((Data) o).year;
 		return temp - this.year;
 	}
-
+	
+	/**
+	 * Returns the consolidated String
+	 * @return String 
+	 * 
+	 */
 	public String toString() {
 
 		return authors + " " + title + " " + pages + " " + volume + " " + journal_booktitle + " " + year + " " + url;

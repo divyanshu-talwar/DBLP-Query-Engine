@@ -1,5 +1,5 @@
 /**
- *
+ * Handles the first query of searching by Author and Title
  * @author Mridul Gupta | Divyanshu Talwar
  */
 
@@ -11,11 +11,17 @@ import entity.Jaccard;
 
 public class Query1Handler {
 
-	private int sortby, from, to;
-	private String name_title;
-	private ArrayList<Data> list = new ArrayList<>();
-	private ArrayList<String> authorAlias = new ArrayList<>();
-
+	private int sortby; /**< Sortby bool. 1 for year. 2 for relevance. */ 
+	private int from; /**< Stores the FROM year */ 
+	private int to; /**< Stores the TO year */ 
+	private String name_title; /**< Name title */ 
+	private ArrayList<Data> list = new ArrayList<>(); /**< ArrayList of Data */ 
+	private ArrayList<String> authorAlias = new ArrayList<>(); /**< ArrayList of Author Aliases */ 
+	
+	/**
+	 * Constructor Class
+	 * sets values received from GUI input
+	 */
 	public Query1Handler(String _name_title, int _sortby, int _from, int _to) {
 		sortby = _sortby;
 		from = _from;
@@ -23,8 +29,12 @@ public class Query1Handler {
 		name_title = _name_title;
 	}
 
-	// sort==1 for year and sort==2 for relevance
-
+	/**
+	 * Checks if title is preent in array
+	 * @param ArrayList<String> arr
+	 * @param String name_title
+	 * @return boolean of element being present.
+	 */
 	public boolean isPresent(ArrayList<String> arr, String name_title) {
 		for (String a : arr) {
 			if (a.equalsIgnoreCase(name_title)) {
@@ -33,7 +43,11 @@ public class Query1Handler {
 		}
 		return false;
 	}
-
+	
+	/**
+	 * Method to search for similar authors. Adds to authorAlias if found
+	 * 
+	 */
 	public void searchSimilarAuthor() {
 		boolean flag = true;
 		for (Author a : Database.authors) {
@@ -48,9 +62,16 @@ public class Query1Handler {
 		}
 
 	}
-
+	
+	/**
+	 * Main working method. Does work based on the passed booleans
+	 * @param boolean searchBy
+	 * 
+	 */
 	public void doWork(boolean searchBy) {
-		// Sort Authors by Year w/o relevance
+		/**
+		 * Sort Authors by Year w/o relevance
+		 */
 		if (searchBy && sortby == 1) {
 			searchSimilarAuthor();
 			for (String a : authorAlias) {
@@ -61,7 +82,10 @@ public class Query1Handler {
 				}
 			}
 		}
-		// Sort Authors by Year w/ relevance
+		
+		/**
+		 * Sort Authors by Year w/ relevance
+		 */
 		else if (searchBy && sortby == 2) {
 			for (int i = 0; i < Database.allData.size(); i++) {
 				// System.out.println("sup");
@@ -72,7 +96,9 @@ public class Query1Handler {
 			}
 		}
 
-		// Sort Titles by Year w/o relevance
+		/**
+		 * Sort Titles by Year w/o relevance
+		 */
 		else if (!searchBy && sortby == 1) {
 			for (int i = 0; i < Database.allData.size(); i++) {
 				// System.out.println("sup");
@@ -83,7 +109,9 @@ public class Query1Handler {
 			}
 		}
 
-		// Sort Titles by Year w/ relevance
+		/**
+		 * Sort Titles by Year w/ relevance
+		 */
 		else {
 			for (int i = 0; i < Database.allData.size(); i++) {
 				// System.out.println("sup");
@@ -104,7 +132,11 @@ public class Query1Handler {
 //		print();
 		showResult();
 	}
-
+	
+	/**
+	 * Sort method. Sorts based on date
+	 * 
+	 */
 	public void sort() {
 		Collections.sort(list);
 		if(sortby==2){
@@ -117,34 +149,33 @@ public class Query1Handler {
 			});
 		}
 	}
-
+	
+	/**
+	 * Adding Data element to the list
+	 * @param Data x
+	 * 
+	 */
 	public void add(Data x) {
 		list.add(x);
 	}
-
-	void print() {
+	
+	/**
+	 * Prints all data to Console
+	 * 
+	 */
+	public void print() {
 		System.out.println(list.size());
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));
 		}
 
 	}
-	//
-	// public void findSimilarNames() {
-	// Iterator it = Database.allData.iterator();
-	// Data tmp;
-	//
-	// while (it.hasNext()) {
-	// tmp = (Data) it.next();
-	// ArrayList<String> auth= tmp.getRawAuthor();
-	// for (int i=0; i<auth.size(); i++) {
-	// if (auth.get(i).contains(name_title))
-	// list.add(tmp);
-	// }
-	// }
-	// }
-
-	void showResult() {
+	
+	/**
+	 * sends all data to GUI to print
+	 * 
+	 */
+	public void showResult() {
 		Object[][] temp = new Object[list.size()][8];
 		for (int i = 0; i < list.size(); i++) {
 			temp[i][0] = i + 1;
