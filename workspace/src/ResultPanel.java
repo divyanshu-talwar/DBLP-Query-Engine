@@ -9,10 +9,10 @@ public class ResultPanel
 
 
     private static Object[][] rowData={
-            {" "," "," "," "," "," "," "}
+            {" "," "," "," "," "," "," "," "}
     };
 
-    private static String columnNames[] = { "title","author" ,"year", "volume","pages","journal/booktitle","url" };
+    private static String columnNames[] = { "S.No.","Title","Author(s)" ,"Year", "Volume","Pages","Journal/Booktitle","Url" };
 
     public ResultPanel()
     {
@@ -39,7 +39,7 @@ public class ResultPanel
 
     private void buildGui()
     {
-        String columnNames[] = { "title","author" ,"year", "volume","pages","journal/booktitle","url" };
+        String columnNames[] = { "S.No.","Title","Author(s)" ,"Year", "Volume","Pages","Journal/Booktitle","Url"  };
         table=new JTable(rowData,columnNames);
         table.setRowHeight(27);
         pane=new JScrollPane(table);

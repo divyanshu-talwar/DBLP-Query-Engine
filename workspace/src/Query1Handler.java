@@ -8,6 +8,7 @@ public class Query1Handler {
 	private int sortby, from, to;
 	private String name_title;
 	private ArrayList<Data> list = new ArrayList<>();
+	private ArrayList<String> authorAlias = new ArrayList<>();
 
 	public Query1Handler(String _name_title, int _sortby, int _from, int _to) {
 		sortby = _sortby;
@@ -18,16 +19,38 @@ public class Query1Handler {
 
 	// sort==1 for year and sort==2 for relevance
 
-	/**
-	 * 
-	 */
+	public boolean isPresent(ArrayList<String> arr,String name_title){
+		for(String a : arr){
+			if(a.equalsIgnoreCase(name_title)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void searchSimilarAuthor(){
+		boolean flag= true;
+		for(Author a : Database.authors){
+			if(isPresent(a.getAlias(),name_title)){
+				authorAlias = a.getAlias();
+				flag = false;
+			}
+		}
+		if(flag){
+			authorAlias = new ArrayList<String>();
+			authorAlias.add(name_title);
+		}
+		
+	}
+	
 	public void doWork(boolean searchBy) {
 		if(searchBy){
-			for (int i = 0; i < Database.allData.size(); i++) {
-				// System.out.println("sup");
-				Data tmpData = Database.allData.get(i);
-				if (tmpData.searchAuthor(name_title) && tmpData.getYear() >= from && tmpData.getYear() <= to) {
-					list.add(Database.allData.get(i));
+			searchSimilarAuthor();
+			for (String a : authorAlias){
+				for (Data tmpData : Database.allData) {				
+					if (tmpData.searchAuthor(a) && tmpData.getYear() >= from && tmpData.getYear() <= to) {
+						list.add(tmpData);
+					}
 				}
 			}
 		}
@@ -77,17 +100,18 @@ public class Query1Handler {
 //    }
     
 	void showResult() {
-		Object[][] temp = new Object[list.size()][7];
+		Object[][] temp = new Object[list.size()][8];
 		for (int i = 0; i < list.size(); i++) {
-			temp[i][0] = list.get(i).getTitle();
-			temp[i][1] = list.get(i).getAuthor();
-			temp[i][2] = list.get(i).getYear();
-			temp[i][3] = list.get(i).getVolume();
-			temp[i][4] = list.get(i).getPages();
-			temp[i][5] = list.get(i).getJournal_booktitle();
-			temp[i][6] = list.get(i).getUrl();
+			temp[i][0] = i+1;
+			temp[i][1] = list.get(i).getTitle();
+			temp[i][2] = list.get(i).getAuthor();
+			temp[i][3] = list.get(i).getYear();
+			temp[i][4] = list.get(i).getVolume();
+			temp[i][5] = list.get(i).getPages();
+			temp[i][6] = list.get(i).getJournal_booktitle();
+			temp[i][7] = list.get(i).getUrl();
 		}
-		String columnNames[] = { "title", "author", "year", "volume", "pages", "journal/booktitle", "url" };
+		String columnNames[] = { "S.No.","Title","Author(s)" ,"Year", "Volume","Pages","Journal/Booktitle","Url"  };
 		ResultPanel.updateData(temp, columnNames);
 		ResultPanel.updateTable();
 	}
