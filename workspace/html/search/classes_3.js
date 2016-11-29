@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['query1handler',['Query1Handler',['../class_query1_handler.html',1,'']]],
-  ['query2handler',['Query2Handler',['../class_query2_handler.html',1,'']]],
-  ['query3handler',['Query3Handler',['../class_query3_handler.html',1,'']]]
+  ['parseentityresolution',['ParseEntityResolution',['../class_parse_entity_resolution.html',1,'']]],
+  ['parser',['Parser',['../class_parser.html',1,'']]]
 ];

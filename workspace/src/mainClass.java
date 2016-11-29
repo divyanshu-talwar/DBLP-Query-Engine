@@ -1,3 +1,8 @@
+/**
+ *
+ * @author Mridul Gupta | Divyanshu Talwar
+ */
+
 public class mainClass {
     public static void main(String[] args){
         Parser p = new Parser();

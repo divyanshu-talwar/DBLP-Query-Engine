@@ -1,3 +1,8 @@
+/**
+ *
+ * @author Mridul Gupta | Divyanshu Talwar
+ */
+
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
