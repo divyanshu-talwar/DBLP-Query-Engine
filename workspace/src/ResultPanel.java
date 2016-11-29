@@ -46,7 +46,7 @@ public class ResultPanel
     {
         String columnNames[] = { "S.No.","Title","Author(s)" ,"Year", "Volume","Pages","Journal/Booktitle","Url"  };
         table=new JTable(rowData,columnNames);
-        table.setRowHeight(27);
+        table.setRowHeight(31);
         pane=new JScrollPane(table);
         pane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
     }
