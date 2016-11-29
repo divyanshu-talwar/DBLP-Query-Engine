@@ -28,7 +28,7 @@ public class ParseEntityResolution extends DefaultHandler {
 	public ParseEntityResolution() {
 		System.setProperty("jdk.xml.entityExpansionLimit", "0");
 		try {
-			File inputFile = new File("dblp.xml");
+			File inputFile = new File("test.xml");
 			SAXParserFactory factory = SAXParserFactory.newInstance();
 			SAXParser saxParser = factory.newSAXParser();
 			saxParser.parse(inputFile, this);

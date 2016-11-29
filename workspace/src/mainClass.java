@@ -10,7 +10,7 @@ public class mainClass {
 	 * @param String[] args
 	 */
     public static void main(String[] args){
-        Parser p = new Parser();
+        Parser p = Parser.getInstance();
         ParseEntityResolution per = new ParseEntityResolution();
         per.printData();
 		System.out.println("hijhuhi");

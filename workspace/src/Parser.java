@@ -1,6 +1,6 @@
 
 /**
- * This is the main SAX parser, parsing the dblp.xml file.
+ * This is the main SAX parser this is a singleton class, parsing the dblp.xml file.
  * @author Mridul Gupta | Divyanshu Talwar
  */
 
@@ -17,7 +17,8 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class Parser extends DefaultHandler {
-
+	
+	private static Parser uniqueInstance;
 	private boolean authorbool = false; /**< Author boolean. */ 
 	private boolean ignorebool = false; /**< Ignore  boolean. */ 
 	private boolean articlebool = false; /**< Article  boolean. */ 
@@ -56,14 +57,14 @@ public class Parser extends DefaultHandler {
 	}
 	
 	/**
-	 * Constructor for Parser
+	 * Private Constructor for Parser
 	 * 
 	 */
-	public Parser() {
+	private Parser() {
 		System.setProperty("jdk.xml.entityExpansionLimit", "0");
 		pb = new ProgressBar();
 		try {
-			File inputFile = new File("dblp.xml");
+			File inputFile = new File("test.xml");
 			SAXParserFactory factory = SAXParserFactory.newInstance();
 			SAXParser saxParser = factory.newSAXParser();
 			saxParser.parse(inputFile, this);
@@ -72,7 +73,16 @@ public class Parser extends DefaultHandler {
 			f.printStackTrace();
 		}
 	}
-	
+	/**
+	 * public getInstance to get uniqueInstance of Parser
+	 * 
+	 */
+	public static Parser getInstance(){
+		if(uniqueInstance == null){
+			uniqueInstance = new Parser();
+		}
+		return uniqueInstance;
+	}
 	/**
      * Start Element method
      * @param String url
