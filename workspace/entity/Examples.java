@@ -1,4 +1,7 @@
+package entity;
+
 /*
+
  * The MIT License
  *
  * Copyright 2015 Thibault Debatty.

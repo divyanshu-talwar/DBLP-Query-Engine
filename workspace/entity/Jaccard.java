@@ -77,7 +77,9 @@ public class Jaccard extends ShingleBased implements
      * @param s2
      * @return
      */
-    public final double similarity(final String s1, final String s2) {
+    public final double similarity(String s11,String s22) {
+    	final String s1=s11.toLowerCase();
+    	final String s2=s22.toLowerCase();
         Map<String, Integer> profile1 = getProfile(s1);
         Map<String, Integer> profile2 = getProfile(s2);
 

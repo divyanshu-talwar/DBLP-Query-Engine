@@ -67,7 +67,9 @@ public class Cosine extends ShingleBased implements
      * @param s2
      * @return
      */
-    public final double similarity(final String s1, final String s2) {
+    public final double similarity(String s11, String s22) {
+    	final String s1=s11.toLowerCase();
+    	final String s2=s22.toLowerCase();
 
         if (s1.length() < getK() || s2.length() < getK()) {
             return 0;
