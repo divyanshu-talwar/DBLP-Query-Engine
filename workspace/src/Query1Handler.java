@@ -84,7 +84,7 @@ public class Query1Handler {
 			for (int i = 0; i < Database.allData.size(); i++) {
 				// System.out.println("sup");
 				Data tmpData = Database.allData.get(i);
-				String s1 = name_title.toLowerCase(),s2=tmpData.getTitle().toLowerCase();
+				String s1 = name_title,s2=tmpData.getTitle();
 				Jaccard J = new Jaccard(2);
 				Double tolerance = 0.4;
 				if (J.similarity(s1, s2)>=tolerance && tmpData.getYear() >= from && tmpData.getYear() <= to) {
@@ -97,7 +97,7 @@ public class Query1Handler {
 		}
 
 		sort();
-		print();
+//		print();
 		showResult();
 	}
 

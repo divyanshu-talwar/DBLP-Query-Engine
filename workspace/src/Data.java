@@ -141,7 +141,7 @@ public class Data implements Comparable {
 	 */
 	public boolean searchRelAuthor(String name_title) {
 		for (int i = 0; i < authors.size(); i++) {
-			String s1=authors.get(i).toLowerCase(),s2=name_title.toLowerCase();
+			String s1=authors.get(i),s2=name_title;
 			Jaccard J = new Jaccard(2);
 			Double tolerance = 0.4;
 			if (J.similarity(s1, s2)>=tolerance)
