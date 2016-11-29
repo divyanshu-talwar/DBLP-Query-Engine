@@ -2,6 +2,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Query2Handler
@@ -9,6 +10,7 @@ public class Query2Handler
     private int limit;
     private HashMap<String,Integer> map = new HashMap<>();
     private int c=0;
+    ArrayList <String> authorAlias;
 
     public Query2Handler(int _k)
     {
@@ -16,21 +18,47 @@ public class Query2Handler
         doWork();
     }
 
+	public boolean isPresent(ArrayList<String> arr,String name_title){
+		for(String a : arr){
+			if(a.equalsIgnoreCase(name_title)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void searchSimilarAuthor(String name_title){
+		boolean flag= true;
+		for(Author a : Database.authors){
+			if(isPresent(a.getAlias(),name_title)){
+				authorAlias = a.getAlias();
+				flag = false;
+			}
+		}
+		if(flag){
+			authorAlias = new ArrayList<String>();
+			authorAlias.add(name_title);
+		}
+		
+	}
+	
     public void doWork()
     {
-        for(int i=0;i<Database.allData.size();i++)
+        for(Data d : Database.allData)
         {
-            for(String a : Database.allData.get(i).getRawAuthor())
+            for(String a : d.getRawAuthor())
             {
-                map.put(a,0);
+            	searchSimilarAuthor(a);
+                map.put(authorAlias.get(0),0);
             }
         }
         System.out.println(map.size());
-        for(int i=0;i<Database.allData.size();i++)
+        for(Data d : Database.allData)
         {
-            for(String a : Database.allData.get(i).getRawAuthor())
+            for(String a : d.getRawAuthor())
             {
-                map.put(a, map.get(a) + 1);
+            	searchSimilarAuthor(a);
+                map.put(authorAlias.get(0), map.get(authorAlias.get(0)) + 1);
             }
         }
         for(String s: map.keySet())
