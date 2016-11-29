@@ -2,7 +2,6 @@
  * Integrates all panels into one
  * @author Mridul Gupta | Divyanshu Talwar
  */
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -12,7 +11,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -27,14 +25,12 @@ public class myPanel {
 	private GridBagConstraints gbc = new GridBagConstraints(); /**< Using GridBag Layout */ 
 	private JComboBox queryCombo; /**< Combobox for Queries */
 	public static JLabel statusBar =  new JLabel("Welcome!!"); /**< Initial Message */
-	
 	/**
 	 * Constructor.
 	 * Initializes GUI Elements
 	 */
 	public myPanel() {
 		panel.setOpaque(false);
-		// gbc.insets= new Insets(20,20,20,20);
 		q1p = new myQuery1Panel();
 		panel2 = q1p.panel2;
 		myQuery2Panel p3 = new myQuery2Panel();
@@ -47,12 +43,9 @@ public class myPanel {
 		queryCombo.setFont(new Font("Arial", Font.BOLD, 12));
 		queryCombo.setSelectedIndex(0);
 		queryCombo.setPreferredSize(new Dimension(100, 25));
-//		queryCombo.setBackground(Color.cyan);
 		gbc.gridx = 0;
 		gbc.gridy = 0;
-		// gbc.fill= GridBagConstraints.HORIZONTAL;
 		panel.add(queryCombo, gbc);
-		
 		/**
 		 * Adds Itemlistener for query box
 		 * 
@@ -107,12 +100,8 @@ public class myPanel {
 					JOptionPane.showMessageDialog(null, "Please enter a valid name","Name field empty",JOptionPane.WARNING_MESSAGE);
 				}
 				String yearSelect = String.valueOf(q1p.yearCombo.getSelectedItem());
-				// System.out.println(searchBy+" "+name_title+" "+yearSelect);
 				int from=0, to=0;
 				if (yearSelect.charAt(0) == 'S') {
-//					if(q1p.sinceYearTextField.getText().equals("")){
-//						JOptionPane.showMessageDialog(null, "Please enter a valid year","From field empty",JOptionPane.WARNING_MESSAGE);
-//					}
 					try{
 						from = Integer.parseInt(q1p.sinceYearTextField.getText());
 					}
@@ -123,9 +112,6 @@ public class myPanel {
 					
 					to = 9999;
 				} else if (yearSelect.charAt(0) == 'C'){
-	//				if(q1p.fromTextField.getText().equals("")){
-	//					JOptionPane.showMessageDialog(null, "Please enter a valid 'from' year","From field empty",JOptionPane.WARNING_MESSAGE);
-	//				}
 					try{
 						from = Integer.parseInt(q1p.fromTextField.getText());
 					}
@@ -133,9 +119,6 @@ public class myPanel {
 						JOptionPane.showMessageDialog(null, "Please enter a valid 'from' year","Year not a Number",JOptionPane.WARNING_MESSAGE);
 						from = 9999;
 					}
-	//				if(q1p.toTextField.getText().equals("")){
-	//					JOptionPane.showMessageDialog(null, "Please enter a valid 'from' year","From field empty",JOptionPane.WARNING_MESSAGE);
-	//				}
 					try{
 						to = Integer.parseInt(q1p.toTextField.getText());
 					}
@@ -146,7 +129,6 @@ public class myPanel {
 					finally{
 						if(from > to){
 							JOptionPane.showMessageDialog(null, "Please make sure that 'from' is less than 'to' ","From field greater than To empty",JOptionPane.WARNING_MESSAGE);
-	
 						}
 					}
 				}
@@ -154,7 +136,6 @@ public class myPanel {
 					JOptionPane.showMessageDialog(null, "Please make sure that year select field is selected","year select field not selected",JOptionPane.WARNING_MESSAGE);
 				}
 				if (searchBy.charAt(0) == 'N') {
-//					System.out.print(q1p.sort.getSelectedCheckbox().getLabel());
 					if(q1p.sort.getSelectedCheckbox()==null){
 						JOptionPane.showMessageDialog(null, "Please make sure that one of the radio buttons is checked ","Radio button not checked",JOptionPane.WARNING_MESSAGE);
 					}
@@ -183,16 +164,13 @@ public class myPanel {
 						q1.doWork(false);
 						statusBarUpdate();
 					}
-
 				}
 				if (searchBy.charAt(0) == 'S'){
 					JOptionPane.showMessageDialog(null, "Please make sure that sort by field is selected","Sort By field not selected",JOptionPane.WARNING_MESSAGE);
 				}
-
 			}
 		});
 	}
-	
 	/**
 	 * Updates Status Bar
 	 * 
@@ -204,13 +182,10 @@ public class myPanel {
 	        statusBar.setText("No results to display!!");
 		}
 		else{
-//			System.out.println("i am here");
 	        statusBar.setForeground(Color.BLACK);
 	        statusBar.setText("Result Count : " + Database.resultCount);
 		}
-
 	}
-	
 	/**
 	 * Returns panel to be used in myFrame
 	 * @return JPanel panel
