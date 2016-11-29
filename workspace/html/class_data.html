@@ -80,6 +80,10 @@ Inheritance diagram for Data:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac9188dcb0fca3b16e8111ce3ee5c2a1c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#ac9188dcb0fca3b16e8111ce3ee5c2a1c">Data</a> ()</td></tr>
 <tr class="separator:ac9188dcb0fca3b16e8111ce3ee5c2a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e6ef6c765b7ee916b44899532600197"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a1e6ef6c765b7ee916b44899532600197">setRelevance</a> (Double s)</td></tr>
+<tr class="separator:a1e6ef6c765b7ee916b44899532600197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a533ad6a1223ea77a538fe10d67a9fe0d"><td class="memItemLeft" align="right" valign="top">Double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a533ad6a1223ea77a538fe10d67a9fe0d">getRelevance</a> ()</td></tr>
+<tr class="separator:a533ad6a1223ea77a538fe10d67a9fe0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4efe69d1a38809de935950b0c344ac94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a4efe69d1a38809de935950b0c344ac94">setTitle</a> (String <a class="el" href="class_data.html#adcd725740eb6c1b70d03d51bcdaa4fc4">title</a>)</td></tr>
 <tr class="separator:a4efe69d1a38809de935950b0c344ac94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03a832c4735f73cf7ffd55ab0261c1aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a03a832c4735f73cf7ffd55ab0261c1aa">setYear</a> (int <a class="el" href="class_data.html#ab4b8026b8e14d7b834aa265bf1221cae">year</a>)</td></tr>
@@ -116,6 +120,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af0585a116e5d386a0d513b8f1549411a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c190e5a2f3f11629a13a90d05e9e1cf"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a7c190e5a2f3f11629a13a90d05e9e1cf">toString</a> ()</td></tr>
 <tr class="separator:a7c190e5a2f3f11629a13a90d05e9e1cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4777441fb21ebeb96b433ad5e112ba3a"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a4777441fb21ebeb96b433ad5e112ba3a">searchRelAuthor</a> (String name_title)</td></tr>
+<tr class="separator:a4777441fb21ebeb96b433ad5e112ba3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -133,6 +139,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ae6e0036466319e383caab1ad88fdb5b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41462839c5b625313952cf2155da2175"><td class="memItemLeft" align="right" valign="top">ArrayList&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a41462839c5b625313952cf2155da2175">url</a></td></tr>
 <tr class="separator:a41462839c5b625313952cf2155da2175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab90384d2d76a02b11719ce48cafa1ed"><td class="memItemLeft" align="right" valign="top">Double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#aab90384d2d76a02b11719ce48cafa1ed">relevance</a></td></tr>
+<tr class="separator:aab90384d2d76a02b11719ce48cafa1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac9188dcb0fca3b16e8111ce3ee5c2a1c"></a>
@@ -149,6 +157,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p><a class="el" href="class_data.html">Data</a> constructor. Sets default for the data fields </p>
 
 </div>
 </div>
@@ -168,6 +177,12 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Add <a class="el" href="class_author.html">Author</a> function to list </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">String</td><td>value </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -186,6 +201,12 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Add URL function to list </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">String</td><td>value </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -221,6 +242,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Returns an author </p><dl class="section return"><dt>Returns</dt><dd>String value of all authors of <a class="el" href="class_data.html">Data</a> </dd></dl>
 
 </div>
 </div>
@@ -238,6 +260,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Returns the Journal/Book Title </p><dl class="section return"><dt>Returns</dt><dd>String journal_booktitle </dd></dl>
 
 </div>
 </div>
@@ -255,6 +278,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Returns the Pages </p><dl class="section return"><dt>Returns</dt><dd>String Pages </dd></dl>
 
 </div>
 </div>
@@ -272,6 +296,25 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Returns the <a class="el" href="class_author.html">Author</a> List </p><dl class="section return"><dt>Returns</dt><dd>ArrayList&lt;String&gt; authors </dd></dl>
+
+</div>
+</div>
+<a id="a533ad6a1223ea77a538fe10d67a9fe0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a533ad6a1223ea77a538fe10d67a9fe0d">&sect;&nbsp;</a></span>getRelevance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Double Data.getRelevance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Relevance Getter Function. Returns the Jaccard similarity value stored </p><dl class="section return"><dt>Returns</dt><dd>Double relevance </dd></dl>
 
 </div>
 </div>
@@ -289,6 +332,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Returns the Title </p><dl class="section return"><dt>Returns</dt><dd>String Title </dd></dl>
 
 </div>
 </div>
@@ -306,6 +350,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Returns the URL </p><dl class="section return"><dt>Returns</dt><dd>String URL </dd></dl>
 
 </div>
 </div>
@@ -323,6 +368,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Returns the Volume </p><dl class="section return"><dt>Returns</dt><dd>String Volume </dd></dl>
 
 </div>
 </div>
@@ -340,6 +386,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Returns the Publication Year </p><dl class="section return"><dt>Returns</dt><dd>int Year </dd></dl>
 
 </div>
 </div>
@@ -358,6 +405,38 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Search for an <a class="el" href="class_author.html">Author</a>. Hard Search </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">String</td><td>value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Boolean value of author found. </dd></dl>
+
+</div>
+</div>
+<a id="a4777441fb21ebeb96b433ad5e112ba3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4777441fb21ebeb96b433ad5e112ba3a">&sect;&nbsp;</a></span>searchRelAuthor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean Data.searchRelAuthor </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>name_title</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name_title</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -376,6 +455,12 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Book/Journal Title setter function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">String</td><td>value </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -394,6 +479,36 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Pages setter function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">String</td><td>value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1e6ef6c765b7ee916b44899532600197"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e6ef6c765b7ee916b44899532600197">&sect;&nbsp;</a></span>setRelevance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Data.setRelevance </td>
+          <td>(</td>
+          <td class="paramtype">Double&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Relevance setter Function. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Double value </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -412,6 +527,12 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Title setter function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">String</td><td>value </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -430,6 +551,12 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Volume setter function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">String</td><td>value </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -448,6 +575,12 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Year setter function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>value </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -488,6 +621,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>ArrayList of <a class="el" href="class_author.html">Author</a> Aliases. </p>
 
 </div>
 </div>
@@ -510,6 +644,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Journal/Book Title. </p>
 
 </div>
 </div>
@@ -532,6 +667,30 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Number of Pages. </p>
+
+</div>
+</div>
+<a id="aab90384d2d76a02b11719ce48cafa1ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab90384d2d76a02b11719ce48cafa1ed">&sect;&nbsp;</a></span>relevance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Double Data.relevance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Store value of relevance with another string. </p>
 
 </div>
 </div>
@@ -554,6 +713,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Publication Title. </p>
 
 </div>
 </div>
@@ -576,6 +736,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>ArrayList of URLs. </p>
 
 </div>
 </div>
@@ -598,6 +759,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Publication Volume. </p>
 
 </div>
 </div>
@@ -620,6 +782,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Year of Publication. </p>
 
 </div>
 </div>

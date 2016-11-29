@@ -1,14 +1,8 @@
 var searchData=
 [
-  ['searchauthor',['searchAuthor',['../class_data.html#a457cf5a872b2a05dd0b5b14db53dceed',1,'Data']]],
-  ['setjournal_5fbooktitle',['setJournal_booktitle',['../class_data.html#a18f402932ef14e0f351e9419def6d840',1,'Data']]],
-  ['setpages',['setPages',['../class_data.html#a368b24c15d79a0ec0c33f031f489d616',1,'Data']]],
-  ['settitle',['setTitle',['../class_data.html#a4efe69d1a38809de935950b0c344ac94',1,'Data']]],
-  ['setvolume',['setVolume',['../class_data.html#a7112127b737cbae7671940486a3a2f2f',1,'Data']]],
-  ['setyear',['setYear',['../class_data.html#a03a832c4735f73cf7ffd55ab0261c1aa',1,'Data']]],
-  ['sinceyear',['sinceYear',['../classmy_query1_panel.html#a4a96735d4624a707ca5c9f774a95f054',1,'myQuery1Panel']]],
-  ['sinceyeartextfield',['sinceYearTextField',['../classmy_query1_panel.html#a60b95255f8c6ffeb063ca97c79206c49',1,'myQuery1Panel']]],
-  ['sort',['sort',['../classmy_query1_panel.html#a5ae5e5e6cfc109b6a15ac6811604a5c1',1,'myQuery1Panel.sort()'],['../class_query1_handler.html#a4e48d3e6ee1d7f644eeb165c980ac1b6',1,'Query1Handler.sort()']]],
-  ['sortby',['sortby',['../class_query1_handler.html#a3ff52874fd305e4df617cb7b2b66fcc7',1,'Query1Handler']]],
-  ['startelement',['startElement',['../class_parser.html#a6ca2235d63e8d6ce30a4a7c3e2deb523',1,'Parser']]]
+  ['relevance',['relevance',['../class_data.html#aab90384d2d76a02b11719ce48cafa1ed',1,'Data']]],
+  ['resetbutton',['resetButton',['../classmy_query1_panel.html#a0e0a620150837e7d0caa3386fdd1879b',1,'myQuery1Panel.resetButton()'],['../classmy_query2_panel.html#a6a14902bb9074acd9cb34b7990caf5cb',1,'myQuery2Panel.resetButton()'],['../classmy_query3_panel.html#ac392a21f5bf8b94abc2277cd7f195714',1,'myQuery3Panel.resetButton()']]],
+  ['resultpanel',['ResultPanel',['../class_result_panel.html',1,'ResultPanel'],['../class_result_panel.html#a1f0864074da52caf14581a14b2574d48',1,'ResultPanel.ResultPanel()']]],
+  ['resultpanel_2ejava',['ResultPanel.java',['../_result_panel_8java.html',1,'']]],
+  ['rowdata',['rowData',['../class_result_panel.html#ac748be7e13e72b23ee1b7486c71e4400',1,'ResultPanel']]]
 ];

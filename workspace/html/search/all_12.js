@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['volume',['volume',['../class_data.html#aaf6320f6222ab00af52f1cd0d0c301e6',1,'Data']]]
+  ['updatedata',['updateData',['../class_result_panel.html#a46714631f37ba703978bdd94e6a666d3',1,'ResultPanel']]],
+  ['updatetable',['updateTable',['../class_result_panel.html#a91bbedbe216c200121a25a629bdc6d2f',1,'ResultPanel']]],
+  ['url',['url',['../class_data.html#a41462839c5b625313952cf2155da2175',1,'Data']]]
 ];

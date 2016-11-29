@@ -72,8 +72,12 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac5a192b72a52acf6999cbfd635bc4362"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_query1_handler.html#ac5a192b72a52acf6999cbfd635bc4362">Query1Handler</a> (String _name_title, int _sortby, int _from, int _to)</td></tr>
 <tr class="separator:ac5a192b72a52acf6999cbfd635bc4362"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3667be62a56c75f35e951d609b9a253"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_query1_handler.html#ab3667be62a56c75f35e951d609b9a253">doWork</a> ()</td></tr>
-<tr class="separator:ab3667be62a56c75f35e951d609b9a253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63059fd583aef4c6903709d80e8fcba4"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_query1_handler.html#a63059fd583aef4c6903709d80e8fcba4">isPresent</a> (ArrayList&lt; String &gt; arr, String <a class="el" href="class_query1_handler.html#a28ae63ec11d4898c14edb5a236b2eaf0">name_title</a>)</td></tr>
+<tr class="separator:a63059fd583aef4c6903709d80e8fcba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4096ece178d8921a7c4e57d69d450c0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_query1_handler.html#a4096ece178d8921a7c4e57d69d450c0d">searchSimilarAuthor</a> ()</td></tr>
+<tr class="separator:a4096ece178d8921a7c4e57d69d450c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d10948b78418f258af88c6e0a8c77ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_query1_handler.html#a1d10948b78418f258af88c6e0a8c77ca">doWork</a> (boolean searchBy)</td></tr>
+<tr class="separator:a1d10948b78418f258af88c6e0a8c77ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e48d3e6ee1d7f644eeb165c980ac1b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_query1_handler.html#a4e48d3e6ee1d7f644eeb165c980ac1b6">sort</a> ()</td></tr>
 <tr class="separator:a4e48d3e6ee1d7f644eeb165c980ac1b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a217ca3f99ec7cc755592185c5a639be1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_query1_handler.html#a217ca3f99ec7cc755592185c5a639be1">add</a> (<a class="el" href="class_data.html">Data</a> x)</td></tr>
@@ -87,10 +91,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a28ae63ec11d4898c14edb5a236b2eaf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33fc67d9100cbc74abaaa35ba6f1d90c"><td class="memItemLeft" align="right" valign="top">ArrayList&lt; <a class="el" href="class_data.html">Data</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_query1_handler.html#a33fc67d9100cbc74abaaa35ba6f1d90c">list</a> = new ArrayList&lt;&gt;()</td></tr>
 <tr class="separator:a33fc67d9100cbc74abaaa35ba6f1d90c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c9060a2047603b95795ac70a711679c"><td class="memItemLeft" align="right" valign="top">ArrayList&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_query1_handler.html#a9c9060a2047603b95795ac70a711679c">authorAlias</a> = new ArrayList&lt;&gt;()</td></tr>
+<tr class="separator:a9c9060a2047603b95795ac70a711679c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>mridul </dd></dl>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac5a192b72a52acf6999cbfd635bc4362"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac5a192b72a52acf6999cbfd635bc4362">&sect;&nbsp;</a></span>Query1Handler()</h2>
 
@@ -150,14 +154,60 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab3667be62a56c75f35e951d609b9a253"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3667be62a56c75f35e951d609b9a253">&sect;&nbsp;</a></span>doWork()</h2>
+<a id="a1d10948b78418f258af88c6e0a8c77ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d10948b78418f258af88c6e0a8c77ca">&sect;&nbsp;</a></span>doWork()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Query1Handler.doWork </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>searchBy</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a63059fd583aef4c6903709d80e8fcba4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63059fd583aef4c6903709d80e8fcba4">&sect;&nbsp;</a></span>isPresent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean Query1Handler.isPresent </td>
+          <td>(</td>
+          <td class="paramtype">ArrayList&lt; String &gt;&#160;</td>
+          <td class="paramname"><em>arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>name_title</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4096ece178d8921a7c4e57d69d450c0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4096ece178d8921a7c4e57d69d450c0d">&sect;&nbsp;</a></span>searchSimilarAuthor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Query1Handler.searchSimilarAuthor </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -185,6 +235,28 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a9c9060a2047603b95795ac70a711679c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c9060a2047603b95795ac70a711679c">&sect;&nbsp;</a></span>authorAlias</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ArrayList&lt;String&gt; Query1Handler.authorAlias = new ArrayList&lt;&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a33fc67d9100cbc74abaaa35ba6f1d90c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a33fc67d9100cbc74abaaa35ba6f1d90c">&sect;&nbsp;</a></span>list</h2>
 
