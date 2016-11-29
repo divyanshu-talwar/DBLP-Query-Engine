@@ -82,7 +82,13 @@ public class myQuery2Panel
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Query2Handler q2= new Query2Handler(Integer.parseInt(field.getText()));
+				try{
+	                Query2Handler q2= new Query2Handler(Integer.parseInt(field.getText()));
+	                myPanel.statusBarUpdate();
+				}
+				catch(NumberFormatException t){
+					JOptionPane.showMessageDialog(null, "Please enter a valid threshold","Threshold not a Number",JOptionPane.WARNING_MESSAGE);
+				}
             }
         });
     }

@@ -3,9 +3,6 @@
  * @author Mridul Gupta | Divyanshu Talwar
  */
 
-package entity;
-
-
 public class Examples {
 
 	/**

@@ -16,6 +16,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -70,7 +71,6 @@ public class myFrame extends JFrame
         
         final JButton next = new JButton("next");
         final JButton prev = new JButton("prev");
-
         ActionListener al = new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 Rectangle rect = pane.getVisibleRect();
@@ -88,10 +88,15 @@ public class myFrame extends JFrame
         next.addActionListener(al);
         prev.addActionListener(al);
 
+		panel.statusBar.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.statusBar.setVerticalAlignment(SwingConstants.CENTER);
+		panel.statusBar.setForeground(Color.BLACK);
+		panel.statusBar.setBorder(BorderFactory.createLineBorder(new Color(0,100,100)));
         JPanel Rpanel = new JPanel(new BorderLayout());
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(prev);
         buttonPanel.add(next);
+        Rpanel.add(panel.statusBar, BorderLayout.NORTH);
         Rpanel.add(buttonPanel, BorderLayout.SOUTH);
         Rpanel.add(pane, BorderLayout.CENTER);
         framegbc.fill= GridBagConstraints.BOTH;

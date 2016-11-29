@@ -76,6 +76,7 @@ public class Query2Handler {
 		}
 		Arrays.sort(temp, new ColumnComparator(1, SortingOrder.DESCENDING));
 		String columnNames[] = { "Author", "No. of publications" };
+		Database.resultCount = temp.length;
 		ResultPanel.updateData(temp, columnNames);
 		ResultPanel.updateTable();
 	}
