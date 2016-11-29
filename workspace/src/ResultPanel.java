@@ -50,7 +50,4 @@ public class ResultPanel
         pane=new JScrollPane(table);
         pane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
     }
-
-
-
 }

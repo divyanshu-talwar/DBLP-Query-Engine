@@ -3,7 +3,6 @@
  * Handles the first query of searching by Author and Title
  * @author Mridul Gupta | Divyanshu Talwar
  */
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -16,7 +15,6 @@ public class Query1Handler {
 	private String name_title; /**< Name title */ 
 	private ArrayList<Data> list = new ArrayList<>(); /**< ArrayList of Data */ 
 	private ArrayList<String> authorAlias = new ArrayList<>(); /**< ArrayList of Author Aliases */ 
-	
 	/**
 	 * Constructor Class sets values received from GUI input
 	 */
@@ -26,7 +24,6 @@ public class Query1Handler {
 		to = _to;
 		name_title = _name_title;
 	}
-
 	/**
 	 * Checks if title is present in array
 	 * 
@@ -95,7 +92,6 @@ public class Query1Handler {
 			for (int i = 0; i < Database.allData.size(); i++) {
 				Data tmpData = Database.allData.get(i);
 				if (tmpData.searchRelAuthor(name_title) && tmpData.getYear() >= from && tmpData.getYear() <= to) {
-					// System.out.println("sup");
 					list.add(Database.allData.get(i));
 				}
 			}
@@ -107,7 +103,6 @@ public class Query1Handler {
 		else if (!searchBy && sortby == 1) {
 			System.out.println("Search by Title and Date sort");
 			for (int i = 0; i < Database.allData.size(); i++) {
-				// System.out.println("sup");
 				Data tmpData = Database.allData.get(i);
 				if (tmpData.getTitle().equalsIgnoreCase(name_title) && tmpData.getYear() >= from
 						&& tmpData.getYear() <= to) {
@@ -122,7 +117,6 @@ public class Query1Handler {
 		else {
 			for (int i = 0; i < Database.allData.size(); i++) {
 				System.out.println("Search by Title and Relevance sort");
-				// System.out.println("sup");
 				Data tmpData = Database.allData.get(i);
 				String s1 = name_title, s2 = tmpData.getTitle();
 				Jaccard J = new Jaccard(2);
@@ -158,7 +152,6 @@ public class Query1Handler {
 			});
 		}
 	}
-
 	/**
 	 * Adding Data element to the list
 	 * 
@@ -169,7 +162,6 @@ public class Query1Handler {
 	public void add(Data x) {
 		list.add(x);
 	}
-
 	/**
 	 * Prints all data to Console
 	 * 
@@ -181,7 +173,6 @@ public class Query1Handler {
 		}
 
 	}
-
 	/**
 	 * sends all data to GUI to print
 	 * 
