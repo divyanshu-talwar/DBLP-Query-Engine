@@ -10,7 +10,6 @@ import java.util.HashMap;
 
 public class Query2Handler {
 	private int limit;
-	private HashMap<String, Integer> map = new HashMap<>();
 	private int c = 0;
 	ArrayList<String> authorAlias;
 
@@ -44,21 +43,24 @@ public class Query2Handler {
 	}
 
 	public void doWork() {
-		for (Data d : Database.allData) {
-			for (String a : d.getRawAuthor()) {
-				searchSimilarAuthor(a);
-				map.put(authorAlias.get(0), 0);
+		if(Database.yah){
+			for (Data d : Database.allData) {
+				for (String a : d.getRawAuthor()) {
+					searchSimilarAuthor(a);
+					Database.map.put(authorAlias.get(0), 0);
+				}
 			}
-		}
-		System.out.println(map.size());
-		for (Data d : Database.allData) {
-			for (String a : d.getRawAuthor()) {
-				searchSimilarAuthor(a);
-				map.put(authorAlias.get(0), map.get(authorAlias.get(0)) + 1);
+			System.out.println(Database.map.size());
+			for (Data d : Database.allData) {
+				for (String a : d.getRawAuthor()) {
+					searchSimilarAuthor(a);
+					Database.map.put(authorAlias.get(0), Database.map.get(authorAlias.get(0)) + 1);
+				}
 			}
+			Database.yah = false;
 		}
-		for (String s : map.keySet()) {
-			if (map.get(s) > limit) {
+		for (String s : Database.map.keySet()) {
+			if (Database.map.get(s) > limit) {
 				c++;
 			}
 		}
@@ -68,10 +70,10 @@ public class Query2Handler {
 	void showResult() {
 		String[][] temp = new String[c][2];
 		int i = 0;
-		for (String s : map.keySet()) {
-			if (map.get(s) > limit) {
+		for (String s : Database.map.keySet()) {
+			if (Database.map.get(s) > limit) {
 				temp[i][0] = s;
-				temp[i++][1] = map.get(s).toString();
+				temp[i++][1] = Database.map.get(s).toString();
 			}
 		}
 		Arrays.sort(temp, new ColumnComparator(1, SortingOrder.DESCENDING));
