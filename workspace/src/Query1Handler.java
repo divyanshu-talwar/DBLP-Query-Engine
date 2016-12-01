@@ -8,7 +8,8 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class Query1Handler {
-
+	
+	private long x; /**< Long. Stores start time */
 	protected int sortby; /**< Sortby bool. 1 for year. 2 for relevance. */ 
 	private int from; /**< Stores the FROM year */ 
 	private int to; /**< Stores the TO year */ 
@@ -69,6 +70,9 @@ public class Query1Handler {
 	 * 
 	 */
 	public void doWork(boolean searchBy) {
+		
+		x = System.currentTimeMillis();
+		
 		/**
 		 * Sort Authors by Year w/o relevance
 		 */
@@ -91,8 +95,11 @@ public class Query1Handler {
 			System.out.println("Search by Name and Relevance sort");
 			for (int i = 0; i < Database.allData.size(); i++) {
 				Data tmpData = Database.allData.get(i);
-				if (tmpData.searchRelAuthor(name_title) && tmpData.getYear() >= from && tmpData.getYear() <= to) {
-					list.add(Database.allData.get(i));
+				Double tolerance = 0.4;
+				Double val = tmpData.searchRelAuthor(name_title);
+				if (val>=tolerance && tmpData.getYear() >= from && tmpData.getYear() <= to) {
+					tmpData.setRelevance(val);
+					list.add(tmpData);
 				}
 			}
 		}
@@ -114,26 +121,33 @@ public class Query1Handler {
 		/**
 		 * Sort Titles by Year w/ relevance
 		 */
+		
 		else {
+			System.out.print("Search by Title and Relevance sort: ");
+			
+			System.out.println(x);
 			for (int i = 0; i < Database.allData.size(); i++) {
-				System.out.println("Search by Title and Relevance sort");
 				Data tmpData = Database.allData.get(i);
 				String s1 = name_title, s2 = tmpData.getTitle();
 				Jaccard J = new Jaccard(2);
 				Double tolerance = 0.4;
-				if (J.similarity(s1, s2) >= tolerance && tmpData.getYear() >= from && tmpData.getYear() <= to) {
+				Double s = J.similarity(s1, s2);
+				if (s >= tolerance && tmpData.getYear() >= from && tmpData.getYear() <= to) {
 					Data toAdd = Database.allData.get(i);
-					toAdd.setRelevance(J.similarity(s1, s2));
+					toAdd.setRelevance(s);
 					list.add(toAdd);
 				}
 			}
 
 		}
-
+		
+		System.out.println("starting sort: "+System.currentTimeMillis());
 		sort();
+		System.out.println("Ending sort: "+System.currentTimeMillis());
 		Database.resultCount = list.size();
 		// print();
 		showResult();
+		System.out.println("Total time "+ (System.currentTimeMillis()-x)/1000);
 	}
 
 	/**
@@ -141,15 +155,20 @@ public class Query1Handler {
 	 * 
 	 */
 	public void sort() {
-		Collections.sort(list);
-		if (sortby == 2) {
-			Collections.sort(list, new Comparator<Data>() {
-				public int compare(Data o1, Data o2) {
-					if (o1.getRelevance() == o2.getRelevance())
-						return 0;
-					return o1.getRelevance() > o2.getRelevance() ? -1 : 1;
-				}
-			});
+		if(!list.isEmpty()){
+			Collections.sort(list);
+			if (sortby == 2) {
+				Collections.sort(list, new Comparator<Data>() {
+					public int compare(Data o1, Data o2) {
+						if (o1.getRelevance() == o2.getRelevance())
+							return 0;
+						return o1.getRelevance() > o2.getRelevance() ? -1 : 1;
+					}
+				});
+			}
+		}
+		else{
+			System.out.println("Query 1 - EMPTY LIST");
 		}
 	}
 	/**

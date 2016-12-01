@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Author {
-
+	private int k;
 	private ArrayList<String> alias; /**< ArrayList of aliases. */ 
 
 	/**
@@ -16,6 +16,7 @@ public class Author {
 	 */
 	Author() {
 		alias = new ArrayList<String>();
+		k = 0;
 	}
 
 	/**

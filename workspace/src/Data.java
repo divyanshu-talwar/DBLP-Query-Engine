@@ -185,14 +185,15 @@ public class Data implements Comparable {
 	 * @param name_title
 	 * @return boolean if string are related
 	 */
-	public boolean searchRelAuthor(String name_title) {
+	public Double searchRelAuthor(String name_title) {
 		for (int i = 0; i < authors.size(); i++) {
 			String s1 = authors.get(i), s2 = name_title;
 			Jaccard J = new Jaccard(2);
 			Double tolerance = 0.4;
-			if (J.similarity(s1, s2) >= tolerance)
-				return true;
+			Double val = J.similarity(s1, s2);
+			if (val >= tolerance)
+				return val;
 		}
-		return false;
+		return 0.1;
 	}
 }

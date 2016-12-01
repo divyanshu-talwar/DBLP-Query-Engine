@@ -43,22 +43,22 @@ public class Query2Handler {
 	}
 
 	public void doWork() {
-		if(Database.yah){
-			for (Data d : Database.allData) {
-				for (String a : d.getRawAuthor()) {
-					searchSimilarAuthor(a);
-					Database.map.put(authorAlias.get(0), 0);
-				}
-			}
-			System.out.println(Database.map.size());
-			for (Data d : Database.allData) {
-				for (String a : d.getRawAuthor()) {
-					searchSimilarAuthor(a);
-					Database.map.put(authorAlias.get(0), Database.map.get(authorAlias.get(0)) + 1);
-				}
-			}
-			Database.yah = false;
-		}
+//		if(Database.yah){
+//			for (Data d : Database.allData) {
+//				for (String a : d.getRawAuthor()) {
+//					searchSimilarAuthor(a);
+//					Database.map.put(authorAlias.get(0), 0);
+//				}
+//			}
+//			System.out.println(Database.map.size());
+//			for (Data d : Database.allData) {
+//				for (String a : d.getRawAuthor()) {
+//					searchSimilarAuthor(a);
+//					Database.map.put(authorAlias.get(0), Database.map.get(authorAlias.get(0)) + 1);
+//				}
+//			}
+//			Database.yah = false;
+//		}
 		for (String s : Database.map.keySet()) {
 			if (Database.map.get(s) > limit) {
 				c++;

@@ -64,7 +64,7 @@ public class Parser extends DefaultHandler {
 		System.setProperty("jdk.xml.entityExpansionLimit", "0");
 		pb = new ProgressBar();
 		try {
-			File inputFile = new File("test.xml");
+			File inputFile = new File("dblp.xml");
 			SAXParserFactory factory = SAXParserFactory.newInstance();
 			SAXParser saxParser = factory.newSAXParser();
 			saxParser.parse(inputFile, this);
@@ -140,7 +140,7 @@ public class Parser extends DefaultHandler {
 			++c;
 			if (c % 10000 == 0) {
 				bar.setValue(c);
-				System.out.println((c / 15294.43) + " %");
+//				System.out.println((c / 15294.43) + " %");
 			}
 		} else if (qName.equalsIgnoreCase("author") && !wwwbool) {
 			authorbool = false;
@@ -149,6 +149,12 @@ public class Parser extends DefaultHandler {
 				name.append(s);
 			}
 			data.addAuthor(name.toString());
+			if(Database.map.containsKey(name.toString())){
+				Database.map.put(name.toString(),Database.map.get(name.toString())+1);
+			}
+			else{
+				Database.map.put(name.toString(),1);
+			}
 		} else if (qName.equalsIgnoreCase("title") && !wwwbool) {
 			titlebool = false;
 			StringBuilder tname = new StringBuilder();

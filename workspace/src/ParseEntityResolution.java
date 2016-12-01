@@ -28,12 +28,12 @@ public class ParseEntityResolution extends DefaultHandler {
 	public ParseEntityResolution() {
 		System.setProperty("jdk.xml.entityExpansionLimit", "0");
 		try {
-			File inputFile = new File("test.xml");
+			File inputFile = new File("dblp.xml");
 			SAXParserFactory factory = SAXParserFactory.newInstance();
 			SAXParser saxParser = factory.newSAXParser();
 			saxParser.parse(inputFile, this);
 		} catch (Exception f) {
-			System.out.println("file not there :(");
+			System.out.println("file not here :(" + f);
 			f.printStackTrace();
 		}
 	}
@@ -82,7 +82,16 @@ public class ParseEntityResolution extends DefaultHandler {
 			bAuthor = false;
 			bwww = false;
 			Database.authors.add(Author);
-			Author = new Author();
+			if(Author!=null && Author.getAlias()!=null &&  !Author.getAlias().isEmpty()){
+				for (int i=1;i<Author.getAlias().size();i++){
+					if( Author.getAlias().get(i) != null && !(Author.getAlias().get(i).equals("")) && Database.map.containsKey(Author.getAlias().get(i)) && Author.getAlias().get(0) != null && !(Author.getAlias().get(0).equals("")) && Database.map.containsKey(Author.getAlias().get(0))){
+						int addsum = ((int)Database.map.get(Author.getAlias().get(i)) + Database.map.get(Author.getAlias().get(0)));
+						Database.map.put(Author.getAlias().get(0),addsum);
+						Database.map.remove(Author.getAlias().get(i));
+					}
+				}
+			}
+//			Author = new Author();
 		}
 
 		else if (qName.equalsIgnoreCase("author") && bwww == true) {
