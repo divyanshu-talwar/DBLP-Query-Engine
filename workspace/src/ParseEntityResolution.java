@@ -17,7 +17,7 @@ public class ParseEntityResolution extends DefaultHandler {
 	boolean bwww = false; /**< WWW Boolean. */ 
 	boolean bAuthor = false; /**< Author boolean. */ 
 
-	ArrayList<String> partAuthor = new ArrayList<String>(); /**< ArrayList of String of Author parts . */ 
+	ArrayList<String> partAuthor; /**< ArrayList of String of Author parts . */ 
 
 	Author Author; /**< Author type. */ 
 	
