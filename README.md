@@ -1,30 +1,10 @@
 # DBLP-Query-Engine
-#Done till now 
-	* Query 1 ist part (entity resolution remaining)
-	* Query 2
-	* GUI
-	* SAX Parser (not parsing)
+## About
+* This is GUI-based DBLP Query Engine implemented as a part of the CSE 201 Course taken in Monsoon 2016 at [IIIT-Delhi].
+* The `UML` diagram and other documents required to implement the query engine are in the `Extras` folder.
+* Contributors - Divyanshu Talwar and Mridul Gupta.
 
-=======
-    * Parser implemented
-s
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
-#Problems/to fix
-	* GUI
-		* ~~'Year select combo' not displayed fully initially.~~
-		* ~~Fix size of custom range 'To' text field~~
-		* ~~Query combo box placement to be fixed~~
-		* ~~Display 20 results at a time. ( plus prev and next buttons)~~
-		* ~~add no. of results~~
-		* Display if entered data is invalid
-		* ~~add checks for data entered in text fields~~
-		* ~~Fix progress bar (should exit after things are fully loaded)~~
-
-	*Parser
-		* ~~Not able to detect multiple authors(not more than 1 author added to list)~~
-
-	*Query 1
-		* ~~Add entity resolution~~
-		* ~~add search by title functionality~~
-		* ~~check if sort by date is in reverse order~~
-		* ~~overload compareTo() of Data for sort by relevance purpose~~
+   [IIIT-Delhi]:<https://iiitd.ac.in>
+   [Eclipse IDE]:<http://eclipse.org>
