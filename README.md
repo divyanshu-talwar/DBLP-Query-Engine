@@ -1,6 +1,6 @@
 # DBLP-Query-Engine
 ## About
-Led team of 2 (comprising me and Divyanshu Talwar) to create a GUI-equipped query engine in Java/Swing for DBLP bibliography (∼2.6GB). We added the following functionalities to the application:
+A GUI-equipped query engine in Java/Swing for DBLP bibliography (∼2.6GB). The applications has the following functionalities:
 1. Search query on publication title or author name with option to filter/sort output via date, relevance.
 2. Query to find authors having more than a given number of publications (handled alias names).
 3. Given a data upto a particular year, predicting the number of papers an
